@@ -1,0 +1,155 @@
+﻿@model IEnumerable<Proyecto_Sadas.Models.Persona>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo_cedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numero_cedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo_persona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellido_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellido_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.parenstesco_encargado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prioridad_encargado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_nacimiento_estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nivel_educativo_estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.provincia_estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canton_estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.distrito_estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ubicacion_exacta_estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.observaciones_estudiante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.relacion_solicitante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.otro_anote_solicitante)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero_cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_persona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.parenstesco_encargado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prioridad_encargado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_nacimiento_estudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nivel_educativo_estudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.provincia_estudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canton_estudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.distrito_estudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ubicacion_exacta_estudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observaciones_estudiante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.relacion_solicitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.otro_anote_solicitante)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_persona">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_persona">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_persona">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
