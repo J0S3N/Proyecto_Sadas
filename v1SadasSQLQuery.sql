@@ -298,7 +298,7 @@ CREATE TABLE [dbo].[historico](
 	[centro_educativo] [nvarchar](250) NULL,
 	[persona_funcionaria] [nvarchar](250) NULL,
 	[producto_apoyo_solicitado] [nvarchar](4000) NULL,
-	[descricpción_condición] [nvarchar](max) NULL,
+	[descricpciÃ³n_condiciÃ³n] [nvarchar](max) NULL,
  CONSTRAINT [PK_historico] PRIMARY KEY CLUSTERED 
 (
 	[id_historico] ASC
@@ -358,7 +358,7 @@ CREATE TABLE [dbo].[persona](
 	[provincia_estudiante] [nvarchar](50) NULL,
 	[canton_estudiante] [nvarchar](50) NULL,
 	[distrito_estudiante] [nvarchar](50) NULL,
-	[ubicacion_exacta_estudiante] [nchar](10) NULL,
+	[ubicacion_exacta_estudiante] [nvarchar](1000) NULL,
 	[observaciones_estudiante] [nvarchar](4000) NULL,
 	[relacion_solicitante] [nvarchar](50) NULL,
 	[otro_anote_solicitante] [nvarchar](4000) NULL,
