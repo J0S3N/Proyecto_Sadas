@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Proyecto_Sadas.Data;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<Proyecto_SadasContext>(options =>
+builder.Services.AddDbContext<ProyectoSadasContexto>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Proyecto_SadasContext") ?? throw new InvalidOperationException("Connection string 'Proyecto_SadasContext' not found.")));
 
 // Add services to the container.

@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using Proyecto_Sadas.Data;
 using Proyecto_Sadas.Models;
 
-namespace Proyecto_Sadas
+namespace Proyecto_Sadas.Controllers
 {
     public class PersonasController : Controller
     {
-        private readonly Proyecto_SadasContext _context;
+        private readonly ProyectoSadasContexto _context;
 
-        public PersonasController(Proyecto_SadasContext context)
+        public PersonasController(ProyectoSadasContexto context)
         {
             _context = context;
         }
@@ -22,7 +22,7 @@ namespace Proyecto_Sadas
         // GET: Personas
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Persona.ToListAsync());
+            return View(await _context.Persona.ToListAsync());
         }
 
         // GET: Personas/Details/5
@@ -148,14 +148,14 @@ namespace Proyecto_Sadas
             {
                 _context.Persona.Remove(persona);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PersonaExists(int id)
         {
-          return _context.Persona.Any(e => e.id_persona == id);
+            return _context.Persona.Any(e => e.id_persona == id);
         }
     }
 }
