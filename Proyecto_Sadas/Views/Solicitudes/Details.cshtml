@@ -1,0 +1,102 @@
+﻿@model Proyecto_Sadas.Models.Solicitud
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Solicitud</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fecha_realiza)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fecha_realiza)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fecha_recibe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fecha_recibe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sede_recibe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sede_recibe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre_persona_recibe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre_persona_recibe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.metodo_envio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.metodo_envio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.apoyo_organizativo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.apoyo_organizativo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.producto_apoyo_organizativo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.producto_apoyo_organizativo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.servicio_apoyo_empleados)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.servicio_apoyo_empleados)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.servicio_apoyo_recibe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.servicio_apoyo_recibe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.servicio_apoyo_recibe_region_educativa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.servicio_apoyo_recibe_region_educativa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.apoyo_educativo_requerido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.apoyo_educativo_requerido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descripcion_condicion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripcion_condicion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id_centro_Educativo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id_centro_Educativo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id_historial)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id_historial)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id_solicitud">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

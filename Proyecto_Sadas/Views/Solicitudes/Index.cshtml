@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Proyecto_Sadas.Models.Solicitud>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_realiza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_recibe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sede_recibe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_persona_recibe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.metodo_envio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apoyo_organizativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_apoyo_organizativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.servicio_apoyo_empleados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.servicio_apoyo_recibe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.servicio_apoyo_recibe_region_educativa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apoyo_educativo_requerido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion_condicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_centro_Educativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_historial)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_realiza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_recibe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sede_recibe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_persona_recibe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.metodo_envio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apoyo_organizativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_apoyo_organizativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicio_apoyo_empleados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicio_apoyo_recibe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicio_apoyo_recibe_region_educativa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apoyo_educativo_requerido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion_condicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_centro_Educativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_historial)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_solicitud">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_solicitud">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_solicitud">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -27,5 +27,7 @@ namespace Proyecto_Sadas.Models
         public string ubicacion_exacta { get; set; }
         public string circuito { get; set; }
         public string encargado { get; set; }
+
+        public ICollection<Solicitud> solicitudes { get; set; } = default!;
     }
 }

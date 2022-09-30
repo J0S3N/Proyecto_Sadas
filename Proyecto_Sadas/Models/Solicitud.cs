@@ -16,8 +16,8 @@ namespace Proyecto_Sadas.Models
     {
         [Key]
         public int id_solicitud { get; set; }
-        public DateTime fechaRealiza { get; set; }
-        public DateTime fechaRecibe { get; set; }
+        public DateTime fecha_realiza { get; set; }
+        public DateTime fecha_recibe { get; set; }
         public string sede_recibe { get; set; }
         public string nombre_persona_recibe { get; set; }
         public string metodo_envio { get; set; }
@@ -36,11 +36,13 @@ namespace Proyecto_Sadas.Models
         [ForeignKey("id_historial")]
         public int id_historial { get; set; }
         public Historial historial { get; set; }
-
+        
         public IList<SolicitudArchivo> solicitud_archivo { get; set; } = default!;
         public IList<SolicitudPersona> solicitud_persona { get; set; } = default!;
         public IList<SolicitudFuncionario> solicitud_funcionario { get; set; } = default!;
         public IList<SolicitudAuditoria> solicitud_auditoria { get; set; }
-        
+
+        public List<IFormFile> Archivos { get; set; }
+
     }
 }

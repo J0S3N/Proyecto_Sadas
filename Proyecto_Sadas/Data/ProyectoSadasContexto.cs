@@ -22,6 +22,9 @@ namespace Proyecto_Sadas.Data
         public DbSet<Proyecto_Sadas.Models.Funcionario> Funcionario { get; set; } = default!;
         public DbSet<Proyecto_Sadas.Models.FuncionarioPermiso> FuncionarioPermiso { get; set; } = default!;
         public DbSet<Proyecto_Sadas.Models.Permiso> Permiso { get; set; } = default!;
+        public DbSet<Proyecto_Sadas.Models.CentroEducativo> CentroEducativo { get; set; } = default!;
+        public DbSet<Proyecto_Sadas.Models.Historial> Historial { get; set; } = default!;
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +34,15 @@ namespace Proyecto_Sadas.Data
             modelBuilder.Entity<SolicitudFuncionario>().HasKey(sc => new { sc.id_funcionario, sc.id_solicitud });
             modelBuilder.Entity<SolicitudAuditoria>().HasKey(sc => new { sc.id_auditoria, sc.id_solicitud });
 
+            modelBuilder.Entity<Solicitud>()
+               .HasOne(s => s.centro_Educativo)
+               .WithMany(g => g.solicitudes)
+               .HasForeignKey(s => s.id_centro_Educativo);
+
+            modelBuilder.Entity<Solicitud>()
+               .HasOne(s => s.historial)
+               .WithMany(g => g.solicitudes)
+               .HasForeignKey(s => s.id_historial);
         }
     }
 }
