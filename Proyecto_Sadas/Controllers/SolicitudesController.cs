@@ -61,8 +61,9 @@ namespace Proyecto_Sadas.Controllers
             if (ModelState.IsValid)
             {
 
-                if (solicitud.Archivos.Count > 0) {
-                    foreach (var archivo in solicitud.Archivos) {
+                if (solicitud.solicitud_archivo.Count > 0) {
+                    foreach (var archivo in solicitud.solicitud_archivo)
+                    {
                         // crea la ruta en la carpeta wwwroot para guardar el archivo en el servidor
                         string ruta = Path.Combine(Directory.GetCurrentDirectory(), solicitud.id_solicitud + "wwwroot/Archivos");
 
@@ -72,18 +73,18 @@ namespace Proyecto_Sadas.Controllers
                             Directory.CreateDirectory(ruta);
                         }
 
-                        string archivo_nombre_con_ruta = Path.Combine(ruta, archivo.FileName);
+                        string archivo_nombre_con_ruta = Path.Combine(ruta, archivo.id_archivoNavigation.FileName);
 
                         using (var stream = new FileStream(archivo_nombre_con_ruta, FileMode.Create))
                         {
-                            archivo.CopyTo(stream);
+                            archivo.id_archivoNavigation.CopyTo(stream);
                         }
 
                         var archivo1 = new Archivo()
                         {
-                            nombre = archivo.FileName,
+                            FileName = archivo.id_archivoNavigation.FileName,
                             ruta = archivo_nombre_con_ruta,
-                            tamanno = archivo.Length.ToString()
+                            Length = archivo.id_archivoNavigation.Length
                         };
 
                         _context.Add(archivo1);

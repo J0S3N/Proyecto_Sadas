@@ -40,9 +40,8 @@ namespace Proyecto_Sadas.Models
         public IList<SolicitudArchivo> solicitud_archivo { get; set; } = default!;
         public IList<SolicitudPersona> solicitud_persona { get; set; } = default!;
         public IList<SolicitudFuncionario> solicitud_funcionario { get; set; } = default!;
-        public IList<SolicitudAuditoria> solicitud_auditoria { get; set; }
+        public IList<SolicitudAuditoria> solicitud_auditoria { get; set; } = default!;
 
-        public List<IFormFile> Archivos { get; set; }
 
     }
 }
