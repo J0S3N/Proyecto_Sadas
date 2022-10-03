@@ -13,7 +13,7 @@ namespace Proyecto_Sadas.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Indice()
         {
             return View();
         }

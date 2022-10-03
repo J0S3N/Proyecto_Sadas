@@ -15,7 +15,7 @@ namespace Proyecto_Sadas.Controllers
         }
 
         // GET: Solicitudes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Indice()
         {
             return View(await _context.Solicitud.ToListAsync());
         }
@@ -96,7 +96,7 @@ namespace Proyecto_Sadas.Controllers
 
                 _context.Add(solicitud);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Indice));
             }
             return View(solicitud);
         }
@@ -147,7 +147,7 @@ namespace Proyecto_Sadas.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Indice));
             }
             return View(solicitud);
         }
@@ -186,7 +186,7 @@ namespace Proyecto_Sadas.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Indice));
         }
 
         private bool SolicitudExists(int id)
