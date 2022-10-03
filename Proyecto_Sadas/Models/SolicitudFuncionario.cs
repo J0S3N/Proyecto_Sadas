@@ -9,6 +9,6 @@ namespace Proyecto_Sadas.Models
         public int id_funcionario { get; set; }
         public Solicitud id_solicitudNavigation { get; set; } = default!;
         public Funcionario id_funcionarioNavigation { get; set; } = default!;
-        
+
     }
 }

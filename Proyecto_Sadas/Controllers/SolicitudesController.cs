@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor.Compilation;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Proyecto_Sadas.Data;
 using Proyecto_Sadas.Models;
@@ -61,7 +55,8 @@ namespace Proyecto_Sadas.Controllers
             if (ModelState.IsValid)
             {
 
-                if (solicitud.solicitud_archivo.Count > 0) {
+                if (solicitud.solicitud_archivo.Count > 0)
+                {
                     foreach (var archivo in solicitud.solicitud_archivo)
                     {
                         // crea la ruta en la carpeta wwwroot para guardar el archivo en el servidor

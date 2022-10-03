@@ -1,16 +1,8 @@
-﻿using MessagePack;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using KeyAttribute = System.ComponentModel.DataAnnotations.KeyAttribute;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Xml.Linq;
+using KeyAttribute = System.ComponentModel.DataAnnotations.KeyAttribute;
 
-namespace Proyecto_Sadas.Models 
+namespace Proyecto_Sadas.Models
 {
     [Table("archivo")]
     public class Archivo : IFormFile
@@ -48,6 +40,6 @@ namespace Proyecto_Sadas.Models
             throw new NotImplementedException();
         }
 
-       
+
     }
 }

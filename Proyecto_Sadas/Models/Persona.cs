@@ -1,11 +1,6 @@
-﻿using MessagePack;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using KeyAttribute = System.ComponentModel.DataAnnotations.KeyAttribute;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using KeyAttribute = System.ComponentModel.DataAnnotations.KeyAttribute;
 
 namespace Proyecto_Sadas.Models
 {
@@ -37,6 +32,6 @@ namespace Proyecto_Sadas.Models
         public string relacion_solicitante { get; set; }
         public string otro_anote_solicitante { get; set; }
         public IList<SolicitudPersona> solicitud_persona { get; set; } = default!;
-        
+
     }
 }

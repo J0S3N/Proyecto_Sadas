@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Proyecto_Sadas.Models;
 
 namespace Proyecto_Sadas.Data
 {
     public class ProyectoSadasContexto : DbContext
     {
-        public ProyectoSadasContexto (DbContextOptions<ProyectoSadasContexto> options)
+        public ProyectoSadasContexto(DbContextOptions<ProyectoSadasContexto> options)
             : base(options)
         {
         }

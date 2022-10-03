@@ -12,31 +12,34 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                
-                <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">Proyecto-Sadas</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-           <li class="nav-item ">
-          <a class="nav-link active text-dark" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Asesoría Técnica
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Registrar Asesoría Técnica</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Modificar Asesoría Técnica</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Consultar Asesoría Técnica</a></li>
-          </ul>
-        </li>
-      </ul>
 
-    </div>
+                <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">Proyecto-Sadas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link active text-dark" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active text-dark" aria-current="page" asp-area="" asp-controller="Personas" asp-action="Index">Personas</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Solicitud
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" aria-current="page" asp-area="" asp-controller="Solicitudes" asp-action="Solicitudes/Create">Registrar Solicitud de Asesoría Técnica</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" aria-current="page" asp-area="" asp-controller="Solicitudes" asp-action="clsModificar_Solicitud">Modificar Solicitud de Asesoría Técnica</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" aria-current="page" asp-area="" asp-controller="Solicitudes" asp-action="clsConsultar_Solicitud">Consultar Solicitud de Asesoría Técnica</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         </nav>
     </header>
