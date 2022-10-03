@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Proyecto_Sadas.Models.Solicitud>
 
 @{
-    ViewData["Title"] = "Indice";
+    ViewData["Title"] = "Consultar";
 }
 
-<h1>Index</h1>
+<h1>Consultar</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Registrar">Crear nuevo</a>
 </p>
 <table class="table">
     <thead>
@@ -103,9 +103,8 @@
                 @Html.DisplayFor(modelItem => item.id_historial)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id_solicitud">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id_solicitud">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id_solicitud">Delete</a>
+                <a asp-action="Modificar" asp-route-id="@item.id_solicitud">Modificar</a> |
+                <a asp-action="Detalle" asp-route-id="@item.id_solicitud">Detalle</a> |        
             </td>
         </tr>
 }

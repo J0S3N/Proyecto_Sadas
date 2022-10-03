@@ -15,13 +15,13 @@ namespace Proyecto_Sadas.Controllers
         }
 
         // GET: Solicitudes
-        public async Task<IActionResult> Indice()
+        public async Task<IActionResult> Consultar()
         {
             return View(await _context.Solicitud.ToListAsync());
         }
 
-        // GET: Solicitudes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Solicitudes/Detalle/5
+        public async Task<IActionResult> Detalle(int? id)
         {
             if (id == null || _context.Solicitud == null)
             {
@@ -38,19 +38,19 @@ namespace Proyecto_Sadas.Controllers
             return View(solicitud);
         }
 
-        // GET: Solicitudes/Create
-        public IActionResult Create()
+        // GET: Solicitudes/Registrar
+        public IActionResult Registrar()
         {
             return View();
         }
 
 
-        // POST: Solicitudes/Create
+        // POST: Solicitudes/Registrar
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id_solicitud,fecha_realiza,fecha_recibe,sede_recibe,nombre_persona_recibe,metodo_envio,apoyo_organizativo,producto_apoyo_organizativo,servicio_apoyo_empleados,servicio_apoyo_recibe,servicio_apoyo_recibe_region_educativa,apoyo_educativo_requerido,descripcion_condicion,id_centro_Educativo,id_historial")] Solicitud solicitud)
+        public async Task<IActionResult> Registrar([Bind("id_solicitud,fecha_realiza,fecha_recibe,sede_recibe,nombre_persona_recibe,metodo_envio,apoyo_organizativo,producto_apoyo_organizativo,servicio_apoyo_empleados,servicio_apoyo_recibe,servicio_apoyo_recibe_region_educativa,apoyo_educativo_requerido,descripcion_condicion,id_centro_Educativo,id_historial")] Solicitud solicitud)
         {
             if (ModelState.IsValid)
             {
@@ -96,13 +96,13 @@ namespace Proyecto_Sadas.Controllers
 
                 _context.Add(solicitud);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Indice));
+                return RedirectToAction(nameof(Consultar));
             }
             return View(solicitud);
         }
 
-        // GET: Solicitudes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Solicitudes/Modificar/5
+        public async Task<IActionResult> Modificar(int? id)
         {
             if (id == null || _context.Solicitud == null)
             {
@@ -117,12 +117,12 @@ namespace Proyecto_Sadas.Controllers
             return View(solicitud);
         }
 
-        // POST: Solicitudes/Edit/5
+        // POST: Solicitudes/Modificar/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id_solicitud,fecha_realiza,fecha_recibe,sede_recibe,nombre_persona_recibe,metodo_envio,apoyo_organizativo,producto_apoyo_organizativo,servicio_apoyo_empleados,servicio_apoyo_recibe,servicio_apoyo_recibe_region_educativa,apoyo_educativo_requerido,descripcion_condicion,id_centro_Educativo,id_historial")] Solicitud solicitud)
+        public async Task<IActionResult> Modificar(int id, [Bind("id_solicitud,fecha_realiza,fecha_recibe,sede_recibe,nombre_persona_recibe,metodo_envio,apoyo_organizativo,producto_apoyo_organizativo,servicio_apoyo_empleados,servicio_apoyo_recibe,servicio_apoyo_recibe_region_educativa,apoyo_educativo_requerido,descripcion_condicion,id_centro_Educativo,id_historial")] Solicitud solicitud)
         {
             if (id != solicitud.id_solicitud)
             {
@@ -147,7 +147,7 @@ namespace Proyecto_Sadas.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Indice));
+                return RedirectToAction(nameof(Consultar));
             }
             return View(solicitud);
         }
@@ -186,7 +186,7 @@ namespace Proyecto_Sadas.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Indice));
+            return RedirectToAction(nameof(Consultar));
         }
 
         private bool SolicitudExists(int id)

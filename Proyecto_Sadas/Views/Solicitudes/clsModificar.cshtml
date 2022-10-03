@@ -1,17 +1,18 @@
 ﻿@model Proyecto_Sadas.Models.Solicitud
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Modificar";
 }
 
-<h1>Create</h1>
+<h1>Modificar</h1>
 
 <h4>Solicitud</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id_solicitud" />
             <div class="form-group">
                 <label asp-for="fecha_realiza" class="control-label"></label>
                 <input asp-for="fecha_realiza" class="form-control" />
@@ -82,23 +83,15 @@
                 <input asp-for="id_historial" class="form-control" />
                 <span asp-validation-for="id_historial" class="text-danger"></span>
             </div>
-            <div class="form-group row">
-                <label asp-for="solicitud_archivo" class="col-sm-2 col-form-label"></label>
-                <div class="mb-3">
-                    <label asp-for="solicitud_archivo" for="formFileMultiple" class="form-label">Archivos adjuntos a la Solicitud</label>
-                    <input asp-for="solicitud_archivo" class="form-control" type="file" id="formFileMultiple" multiple>
-                </div>
-            </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Consultar">Volver</a>
 </div>
 
 @section Scripts {
