@@ -18,6 +18,37 @@
                 <span asp-validation-for="fecha_realiza" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label>Primer apellido del solicitante</label>
+                <input type="text" class="form-control" />
+            </div>
+             <div class="form-group">
+                <label>Segundo apellido del solicitante</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Nombre del solicitante</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Puesto que desenpeña</label>
+                <input type="text" name="combobox " list="List" class="form-control">
+                <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Puesto que desenpeña
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Docente Regular</a>
+                        <a class="dropdown-item" href="#">Padre o Madre Familia</a>
+                        <a class="dropdown-item" href="#">Comité Apoyo</a>
+                        <a class="dropdown-item" href="#">Docente Apoyo</a>
+                        <a class="dropdown-item" href="#">Equipo Regional Itinerante</a>
+                        <a class="dropdown-item" href="#">Docente Educacional Especial</a>
+                        <a class="dropdown-item" href="#">Estudiante</a>
+                        <a class="dropdown-item" href="#">Otro</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
                 <label asp-for="fecha_recibe" class="control-label"></label>
                 <input asp-for="fecha_recibe" class="form-control" />
                 <span asp-validation-for="fecha_recibe" class="text-danger"></span>
