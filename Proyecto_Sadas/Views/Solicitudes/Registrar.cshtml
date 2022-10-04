@@ -10,12 +10,31 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <h4>I. Información de la solicitud</h4>
         <form asp-action="Registrar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="fecha_realiza" class="control-label"></label>
-                <input asp-for="fecha_realiza" class="form-control" />
+                <label asp-for="fecha_realiza" class="control-label">Fecha en que se realiza la solicitud: </label>
+                <input type="date" asp-for="fecha_realiza" class="form-control" />
                 <span asp-validation-for="fecha_realiza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Tipo de cédula del solicitante</label>
+                <select class="form-select" id="tipo-cedula-solicitud">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Cédula Nacional</option>
+                    <option>Padre o Madre Familia</option>
+                    <option>Comité Apoyo</option>
+                    <option>Docente Apoyo</option>
+                    <option>Equipo Regional Itinerante</option>
+                    <option>Docente Educacíón Especial</option>
+                    <option>Estudiante</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Número de cédula de solicitante</label>
+                <input type="text" class="form-control" />
             </div>
             <div class="form-group">
                 <label>Primer apellido del solicitante</label>
@@ -30,33 +49,49 @@
                 <input type="text" class="form-control" />
             </div>
             <div class="form-group">
-                <label>Puesto que desenpeña</label>
-                <input type="text" name="combobox " list="List" class="form-control">
-                <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Puesto que desenpeña
-                </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Docente Regular</a>
-                        <a class="dropdown-item" href="#">Padre o Madre Familia</a>
-                        <a class="dropdown-item" href="#">Comité Apoyo</a>
-                        <a class="dropdown-item" href="#">Docente Apoyo</a>
-                        <a class="dropdown-item" href="#">Equipo Regional Itinerante</a>
-                        <a class="dropdown-item" href="#">Docente Educacional Especial</a>
-                        <a class="dropdown-item" href="#">Estudiante</a>
-                        <a class="dropdown-item" href="#">Otro</a>
-                    </div>
-                </div>
+                <label for="puesto_desenpena" class="form-label mt-4">Puesto que desenpeña</label>
+                <select class="form-select" id="puesto_desenpena">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Docente Regular</option>
+                    <option>Padre o Madre Familia</option>
+                    <option>Comité Apoyo</option>
+                    <option>Docente Apoyo</option>
+                    <option>Equipo Regional Itinerante</option>
+                    <option>Docente Educacíón Especial</option>
+                    <option>Estudiante</option>
+                    <option>Otro</option>
+                </select>
             </div>
             <div class="form-group">
-                <label asp-for="fecha_recibe" class="control-label"></label>
-                <input asp-for="fecha_recibe" class="form-control" />
+                <label class="form-label mt-4">Número telefónico #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Número telefónico #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="fecha_recibe" class="control-label">Fecha en que se recibe la solicitud:</label>
+                <input type="date" asp-for="fecha_recibe" class="form-control" />
                 <span asp-validation-for="fecha_recibe" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="sede_recibe" class="control-label"></label>
-                <input asp-for="sede_recibe" class="form-control" />
+                <label asp-for="sede_recibe" class="control-label">La solicitud se dirige a:</label>
+                <select asp-for="sede_recibe" class="form-select" id="sede_recibe">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>DAAT</option>
+                    <option>Sede Coto</option>
+                    <option>Sede Liberia</option>
+                    <option>Sede Limón</option>
+                    <option>Sede San Carlos</option>
+                </select>
                 <span asp-validation-for="sede_recibe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Nombre de la persona que recibe la solicitud</label>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control">
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="nombre_persona_recibe" class="control-label"></label>
@@ -66,7 +101,18 @@
             <div class="form-group">
                 <label asp-for="metodo_envio" class="control-label"></label>
                 <input asp-for="metodo_envio" class="form-control" />
+                <select asp-for="metodo_envio" class="form-select" id="sede_recibe">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Personalmente</option>
+                    <option>Por fax</option>
+                    <option>Por correo electrónico</option>
+                </select>
                 <span asp-validation-for="metodo_envio" class="text-danger"></span>
+            </div>
+            <h4>II. Información de la persona que requiera la asesoría</h4>
+            <div class="form-group">
+                <label>Nombre del solicitante</label>
+                <input type="text" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="apoyo_organizativo" class="control-label"></label>
