@@ -10,43 +10,401 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <h4>I. Información de la solicitud</h4>
         <form asp-action="Registrar">
+            
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <h4>Información de la solicitud</h4>
+
             <div class="form-group">
-                <label asp-for="fecha_realiza" class="control-label">Fecha en que se realiza la solicitud: </label>
+                <label asp-for="fecha_realiza" class="control-label">Código de solicitud </label>
+            
+                <input type="text" name="inputname" value="datos a enviar" disabled>
+                </div>
+            <div class="form-group">
+                
+                <label asp-for="fecha_realiza" class="control-label">Fecha de la solicitud: </label>
                 <input type="date" asp-for="fecha_realiza" class="form-control" />
                 <span asp-validation-for="fecha_realiza" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Tipo de cédula del solicitante</label>
-                <select class="form-select" id="tipo-cedula-solicitud">
+                <label asp-for="metodo_envio" class="control-label">Método de envío</label>
+                
+                <select asp-for="metodo_envio" class="form-select" id="metodo_envio">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
-                    <option>Cédula Nacional</option>
-                    <option>Padre o Madre Familia</option>
-                    <option>Comité Apoyo</option>
-                    <option>Docente Apoyo</option>
-                    <option>Equipo Regional Itinerante</option>
-                    <option>Docente Educacíón Especial</option>
-                    <option>Estudiante</option>
-                    <option>Otro</option>
+                    <option>Documento Físico</option>
+                    <option>Fax</option>
+                    <option>Correo eléctronico</option>
                 </select>
+                <span asp-validation-for="metodo_envio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Número de cédula de solicitante</label>
+                <label asp-for="sede_recibe" class="control-label">Sede que se recibe la solicitud</label>
+                <input asp-for="sede_recibe" class="form-control" />
+                <select asp-for="sede_recibe" class="form-select" id="sede_recibe">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Limón</option>
+                    <option>San Carlos</option>
+                    <option>Coto</option>
+                    <option>Central-Cenarec</option>
+                    <option>Liberia</option>
+                </select>
+                <span asp-validation-for="sede_recibe" class="text-danger"></span>
+            </div>
+           
+
+            <div class="form-group">
+                <label asp-for="nombre_persona_recibe" class="control-label">Nombre de la persona que recibe la solicitud</label>
+                <input asp-for="nombre_persona_recibe" class="form-control" />
+                <span asp-validation-for="nombre_persona_recibe" class="text-danger"></span>
+            </div>
+
+
+
+            <h4>Información del estudiante que requiere la asesoría</h4>
+            <div class="form-group">
+                <label>Identificación del estudiante</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipo de identificación</label>
+                
+                <select class="form-select" id="tipo_cedula">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Cédula Nacional</option>
+                    <option>Cédula de Residencia</option>
+                    <option>Carnet de Refugiado</option>
+                    <option>Pasaporte</option>
+                    <option>Indocumentado</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Nombre del estudiante</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Primer apellido del estudiante</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Segundo apellido del estudiante</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+
+                <label class="control-label">Fecha de nacimiento: </label>
+                <input type="date" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div>
+                <label class="control-label">Edad </label>
+                    <input type="text" name="inputname" value="edad" disabled>
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico</label>
+                <input type="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Lugar de residencia</label>
+                <input type="text" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label mt-4">Descripción de la condición de la persona estudiante</label>
+                <textarea class="form-control" id="descripcion_condicion" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Identificación de la madre</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipo de identificación</label>
+                
+                <select class="form-select" id="tipo_cedula">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Cédula Nacional</option>
+                    <option>Cédula de Residencia</option>
+                    <option>Carnet de Refugiado</option>
+                    <option>Pasaporte</option>
+                    <option>Indocumentado</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Nombre de la madre</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Primer apellido de la madre</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Segundo apellido de la madre</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico</label>
+                <input type="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Identificación del padre</label>
+                <input type="text" class="form-control" />
+            </div>
+            
+           <!-- <div class="form-group">
+                <label class="control-label">Tipo de identificación</label>
+                <input class="form-control" />
+                <select " class="form-select" id="tipo_cedula">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Cédula Nacional</option>
+                    <option>Cédula de Residencia</option>
+                    <option>Carnet de Refugiado</option>
+                    <option>Pasaporte</option>
+                    <option>Indocumentado</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            -->
+            
+            
+            <div class="form-group">
+                <label>Nombre del padre</label>
+                <input type="text" class="form-control" />
+            </div>
+            
+            <div class="form-group">
+                <label>Primer apellido del padre</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Segundo apellido del padre</label>
+                <input type="text" class="form-control" />
+            </div>
+             <div class="form-group">
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico</label>
+                <input type="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Identificación del encargado</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipo de identificación</label>
+                
+                <select class="form-select" id="tipo_cedula">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Cédula Nacional</option>
+                    <option>Cédula de Residencia</option>
+                    <option>Carnet de Refugiado</option>
+                    <option>Pasaporte</option>
+                    <option>Indocumentado</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Nombre del encargado</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Primer apellido del encargado</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Segundo apellido del encargado</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Parentesco</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico</label>
+                <input type="email" class="form-control" />
+            </div>
+
+            <h4>Información del centro educativo que asiste la persona estudiante</h4>
+            <div class="form-group">
+                <label>Nivel educativo que cursa</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Servicio educativo al que pertenece</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Nombre del centro educativo</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico</label>
+                <input type="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Ubicación del centro educativo</label>
+                <label>Provincia</label>
+                <input type="text" class="form-control" />
+                <label>Cantón</label>
+                <input type="text" class="form-control" />
+                <label>Distrito</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Ubicación exacta del centro educativo</label>
+                <textarea class="form-control" id="ubicacion_exacta" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Región Educativa</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Circuito</label>
+                <input type="text" class="form-control" />
+            </div>
+
+
+            <h4>Información del docente a cargo</h4>
+            <div class="form-group">
+                <label>Identificación del docente a cargo</label>
+                <input type="text" class="form-control" />
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">Tipo de identificación</label>
+                
+                <select class="form-select" id="tipo_cedula">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Cédula Nacional</option>
+                    <option>Cédula de Residencia</option>
+                    <option>Carnet de Refugiado</option>
+                    <option>Pasaporte</option>
+                    <option>Indocumentado</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Nombre del docente a cargo</label>
+                <input type="text" class="form-control" />
+            </div>
+            
+            <div class="form-group">
+                <label>Primer apellido del docente a cargo</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Segundo apellido del docente a cargo</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico</label>
+                <input type="email" class="form-control" />
+            </div>
+
+
+            <br />
+            <h4>Información de la persona a cargo de la Dirección</h4>
+            <div class="form-group">
+                <label>Nombre de la persona a cargo de la Dirección</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Primer apellido de la persona a cargo de la Dirección</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Segundo apellido de la persona a cargo de la Dirección</label>
+                <input type="text" class="form-control" />
+            </div>
+            <h4>Información de la persona solicitante</h4>
+            <div class="form-group">
+                <label>Identificación de la persona solicitante</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipo de identificación</label>
+                
+                <select class="form-select" id="tipo_cedula">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Cédula Nacional</option>
+                    <option>Cédula de Residencia</option>
+                    <option>Carnet de Refugiado</option>
+                    <option>Pasaporte</option>
+                    <option>Indocumentado</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Nombre del solicitante</label>
                 <input type="text" class="form-control" />
             </div>
             <div class="form-group">
                 <label>Primer apellido del solicitante</label>
                 <input type="text" class="form-control" />
             </div>
-             <div class="form-group">
+            <div class="form-group">
                 <label>Segundo apellido del solicitante</label>
                 <input type="text" class="form-control" />
             </div>
             <div class="form-group">
-                <label>Nombre del solicitante</label>
-                <input type="text" class="form-control" />
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Teléfono #2</label>
+                <input type="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico</label>
+                <input type="email" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="puesto_desenpena" class="form-label mt-4">Puesto que desenpeña</label>
@@ -62,57 +420,10 @@
                     <option>Otro</option>
                 </select>
             </div>
+            <h4>Información de la solicitud de asesoría</h4>
             <div class="form-group">
-                <label class="form-label mt-4">Número telefónico #1</label>
-                <input type="tel" class="form-control">
-            </div>
-            <div class="form-group">
-                <label class="form-label mt-4">Número telefónico #2</label>
-                <input type="tel" class="form-control">
-            </div>
-            <div class="form-group">
-                <label asp-for="fecha_recibe" class="control-label">Fecha en que se recibe la solicitud:</label>
-                <input type="date" asp-for="fecha_recibe" class="form-control" />
-                <span asp-validation-for="fecha_recibe" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="sede_recibe" class="control-label">La solicitud se dirige a:</label>
-                <select asp-for="sede_recibe" class="form-select" id="sede_recibe">
-                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
-                    <option>DAAT</option>
-                    <option>Sede Coto</option>
-                    <option>Sede Liberia</option>
-                    <option>Sede Limón</option>
-                    <option>Sede San Carlos</option>
-                </select>
-                <span asp-validation-for="sede_recibe" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="form-label mt-4">Nombre de la persona que recibe la solicitud</label>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="nombre_persona_recibe" class="control-label"></label>
-                <input asp-for="nombre_persona_recibe" class="form-control" />
-                <span asp-validation-for="nombre_persona_recibe" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="metodo_envio" class="control-label"></label>
-                <input asp-for="metodo_envio" class="form-control" />
-                <select asp-for="metodo_envio" class="form-select" id="sede_recibe">
-                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
-                    <option>Personalmente</option>
-                    <option>Por fax</option>
-                    <option>Por correo electrónico</option>
-                </select>
-                <span asp-validation-for="metodo_envio" class="text-danger"></span>
-            </div>
-            <h4>II. Información de la persona que requiera la asesoría</h4>
-            <div class="form-group">
-                <label>Nombre del solicitante</label>
-                <input type="text" class="form-control" />
+                <label class="form-label mt-4">Motivo de la solicitud</label>
+                <textarea class="form-control" id="motivo" rows="4"></textarea>
             </div>
             <div class="form-group">
                 <label asp-for="apoyo_organizativo" class="control-label"></label>
@@ -120,47 +431,138 @@
                 <span asp-validation-for="apoyo_organizativo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="producto_apoyo_organizativo" class="control-label"></label>
-                <input asp-for="producto_apoyo_organizativo" class="form-control" />
-                <span asp-validation-for="producto_apoyo_organizativo" class="text-danger"></span>
+                <label  class="control-label">Producto de apoyo empleados</label>
+                <input  class="form-control" />
+                <span  class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="servicio_apoyo_empleados" class="control-label"></label>
+                <label asp-for="servicio_apoyo_empleados" class="control-label">Servicio de apoyo empleados</label>
                 <input asp-for="servicio_apoyo_empleados" class="form-control" />
                 <span asp-validation-for="servicio_apoyo_empleados" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="servicio_apoyo_recibe" class="control-label"></label>
+                <label asp-for="servicio_apoyo_recibe" class="control-label">Servicio de apoyo que recibe</label>
                 <input asp-for="servicio_apoyo_recibe" class="form-control" />
                 <span asp-validation-for="servicio_apoyo_recibe" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="servicio_apoyo_recibe_region_educativa" class="control-label"></label>
+                <label asp-for="servicio_apoyo_recibe_region_educativa" class="control-label">Servicio apoyo recibe region educativa</label>
                 <input asp-for="servicio_apoyo_recibe_region_educativa" class="form-control" />
                 <span asp-validation-for="servicio_apoyo_recibe_region_educativa" class="text-danger"></span>
             </div>
+
+
+
+
+
+
+
             <div class="form-group">
-                <label asp-for="apoyo_educativo_requerido" class="control-label"></label>
+                <label asp-for="apoyo_educativo_requerido" class="control-label">Apoyo requerido</label>
                 <input asp-for="apoyo_educativo_requerido" class="form-control" />
                 <span asp-validation-for="apoyo_educativo_requerido" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="descripcion_condicion" class="control-label"></label>
-                <input asp-for="descripcion_condicion" class="form-control" />
-                <span asp-validation-for="descripcion_condicion" class="text-danger"></span>
+            
+            <h4>Observaciones</h4>
+            <div>
+                <div class="form-check">
+                    <label  class="control-label">Tuvo asesoría del Cenarec anteriormente</label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sí
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="id_centro_Educativo" class="control-label"></label>
-                <input asp-for="id_centro_Educativo" class="form-control" />
-                <span asp-validation-for="id_centro_Educativo" class="text-danger"></span>
+                <label class="control-label">Sede en donde recibió asesoría anteriormente</label>
+                
+                <select class="form-select" id="tipo_cedula">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Limón</option>
+                    <option>San Carlos</option>
+                    <option>Coto</option>
+                    <option>Central-Cenarec</option>
+                    <option>Liberia</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            <div>
+                <div class="form-check">
+                    <label asp-for="apoyo_educativo_requerido" class="control-label">Adjunta certificación médica emitida por la CCSS</label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sí
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
+            </div>
+            <div>
+                <div class="form-check">
+                    <label asp-for="apoyo_educativo_requerido" class="control-label">Adjunta certificación de discapacidad emitida por el Consejo Nacional de Personas con Discapacidad</label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sí
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
+            </div>
+            <div>
+                <div class="form-check">
+                    <label asp-for="apoyo_educativo_requerido" class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?</label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sí
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="id_historial" class="control-label"></label>
-                <input asp-for="id_historial" class="form-control" />
-                <span asp-validation-for="id_historial" class="text-danger"></span>
+                <label>Mencione el producto de apoyo solicitado</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div>
+                <div class="form-check">
+                    <label asp-for="apoyo_educativo_requerido" class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?</label>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sí
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mencione el producto de apoyo solicitado</label>
+                <input type="text" class="form-control" />
             </div>
             <div class="form-group row">
-                <label asp-for="solicitud_archivo" class="col-sm-2 col-form-label"></label>
+                
+                <label asp-for="solicitud_archivo" class="col-sm-2 col-form-label">Archivos Adjuntos</label>
                 <div class="mb-3">
                     <label asp-for="solicitud_archivo" for="formFileMultiple" class="form-label">Archivos adjuntos a la Solicitud</label>
                     <input asp-for="solicitud_archivo" class="form-control" type="file" id="formFileMultiple" multiple>
@@ -168,10 +570,11 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Registrar" class="btn btn-primary" />
-                
+
             </div>
         </form>
     </div>
+
 </div>
 
 <div>
@@ -179,5 +582,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
