@@ -484,21 +484,26 @@
             </div>
             
             <h4>Observaciones</h4>
+            
             <div>
                 <div class="form-check">
                     <label  class="control-label">Tuvo asesoría del Cenarec anteriormente</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" checked>
                     <label class="form-check-label" for="flexRadioDefault1">
                         Sí
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
                         No
                     </label>
                 </div>
+                </div>
             </div>
+            
             <div class="form-group">
                 <label class="control-label">Sede en donde recibió asesoría anteriormente</label>
                 
@@ -512,76 +517,94 @@
                 </select>
                 <span class="text-danger"></span>
             </div>
+           
             <div>
                 <div class="form-check">
                     <label asp-for="apoyo_educativo_requerido" class="control-label">Adjunta certificación médica emitida por la CCSS</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
                         Sí
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" checked>
                     <label class="form-check-label" for="flexRadioDefault2">
                         No
                     </label>
                 </div>
+                </div>
             </div>
+            
             <div>
                 <div class="form-check">
                     <label asp-for="apoyo_educativo_requerido" class="control-label">Adjunta certificación de discapacidad emitida por el Consejo Nacional de Personas con Discapacidad</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault3" checked>
+                    <label class="form-check-label" for="flexRadioDefault3">
                         Sí
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault3" checked>
+                    <label class="form-check-label" for="flexRadioDefault3">
                         No
                     </label>
                 </div>
+                </div>
             </div>
-            <div>
+            
+             <div>
                 <div class="form-check">
                     <label asp-for="apoyo_educativo_requerido" class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault4" checked>
+                    <label class="form-check-label" for="flexRadioDefault4">
                         Sí
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault4" checked>
+                    <label class="form-check-label" for="flexRadioDefault4">
                         No
                     </label>
                 </div>
+                </div>
             </div>
+
             <div class="form-group">
                 <label>Mencione el producto de apoyo solicitado</label>
                 <input type="text" class="form-control" />
             </div>
+
             <div>
                 <div class="form-check">
                     <label asp-for="apoyo_educativo_requerido" class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault5" checked>
+                    <label class="form-check-label" for="flexRadioDefault5">
                         Sí
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault5" checked>
+                    <label class="form-check-label" for="flexRadioDefault5">
                         No
                     </label>
+                </div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Mencione el producto de apoyo solicitado</label>
                 <input type="text" class="form-control" />
             </div>
+            
             <div class="form-group row">
-                
+  
                 <label asp-for="solicitud_archivo" class="col-sm-2 col-form-label">Archivos Adjuntos</label>
                 <div class="mb-3">
                     <label asp-for="solicitud_archivo" for="formFileMultiple" class="form-label">Archivos adjuntos a la Solicitud</label>
@@ -589,6 +612,7 @@
                 </div>
             </div>
             <div class="form-group">
+                
                 <input type="submit" value="Registrar" class="btn btn-primary" />
 
             </div>                
