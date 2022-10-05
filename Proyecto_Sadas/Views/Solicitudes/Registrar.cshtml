@@ -4,6 +4,7 @@
     ViewData["Title"] = "Registrar";
 }
 
+
 <h1>Registrar</h1>
 
 <h4>Solicitud</h4>
@@ -13,23 +14,24 @@
         <form asp-action="Registrar">
             
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
             <h4>Información de la solicitud</h4>
 
             <div class="form-group">
-                <label asp-for="fecha_realiza" class="control-label">Código de solicitud </label>
-            
-                <input type="text" name="inputname" value="datos a enviar" disabled>
-                </div>
+                <label asp-for="id_solicitud" class="control-label">Código de solicitud </label>
+                <input type="text" name="inputname" disabled>
+            </div>
             <div class="form-group">
-                
                 <label asp-for="fecha_realiza" class="control-label">Fecha de la solicitud: </label>
                 <input type="date" asp-for="fecha_realiza" class="form-control" />
                 <span asp-validation-for="fecha_realiza" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="fecha_recibe" class="control-label">Fecha que se recibe la solicitud: </label>
+                <input type="date" asp-for="fecha_recibe" class="form-control" />
+                <span asp-validation-for="fecha_recibe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="metodo_envio" class="control-label">Método de envío</label>
-                
                 <select asp-for="metodo_envio" class="form-select" id="metodo_envio">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Documento Físico</option>
@@ -39,8 +41,7 @@
                 <span asp-validation-for="metodo_envio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="sede_recibe" class="control-label">Sede que se recibe la solicitud</label>
-                <input asp-for="sede_recibe" class="form-control" />
+                <label asp-for="sede_recibe" class="control-label">Sede donde se recibió la solicitud</label>
                 <select asp-for="sede_recibe" class="form-select" id="sede_recibe">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Limón</option>
@@ -51,25 +52,18 @@
                 </select>
                 <span asp-validation-for="sede_recibe" class="text-danger"></span>
             </div>
-           
-
             <div class="form-group">
                 <label asp-for="nombre_persona_recibe" class="control-label">Nombre de la persona que recibe la solicitud</label>
                 <input asp-for="nombre_persona_recibe" class="form-control" />
                 <span asp-validation-for="nombre_persona_recibe" class="text-danger"></span>
             </div>
 
-
+            <br />
 
             <h4>Información del estudiante que requiere la asesoría</h4>
             <div class="form-group">
-                <label>Identificación del estudiante</label>
-                <input type="text" class="form-control" />
-            </div>
-            <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
-                
-                <select class="form-select" id="tipo_cedula">
+                <select class="form-select" id="tipo_cedula_estudiante">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -80,44 +74,70 @@
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label>Identificación del estudiante</label>
+                <input type="text" class="form-control" id="id_estudiante" />
+            </div>
+            <div class="form-group">
                 <label>Nombre del estudiante</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" id="nombre_estudiante"/>
             </div>
             <div class="form-group">
                 <label>Primer apellido del estudiante</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" id="apellido_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del estudiante</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" id="apellido_2_estudiante"/>
             </div>
             <div class="form-group">
-
                 <label class="control-label">Fecha de nacimiento: </label>
-                <input type="date" class="form-control" />
+                <input type="date" class="form-control" id="fecha_nacimiento_estudiante"/>
                 <span class="text-danger"></span>
             </div>
             <div>
-                <label class="control-label">Edad </label>
-                    <input type="text" name="inputname" value="edad" disabled>
+                <label class="control-label">Edad</label>
+                <input type="text" name="inputname" value="edad" disabled>
             </div>
             <div class="form-group">
-                <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control">
+                <label class="form-label mt-4">Teléfono #1 del estudiante</label>
+                <input type="tel" class="form-control" id="telefono_1_estudiante">
             </div>
             <div class="form-group">
-                <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control">
+                <label class="form-label mt-4">Teléfono #2 del estudiante</label>
+                <input type="tel" class="form-control" id="telefono_2_estudiante">
             </div>
             <div class="form-group">
-                <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" />
+                <label class="form-label mt-4">Correo eléctronico del estudiante</label>
+                <input type="email" class="form-control" id="correo_1_estudiante"/>
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4">Correo eléctronico del estudiante</label>
+                <input type="email" class="form-control" id="correo_2_estudiante"/>
+            </div>
+            <div>
+                <div>
+                    <label for="">Provincias</label>
+                    <select id="slt-provincias">
+                        <option value="">-- Seleccione una provincia --</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Cantones</label>
+                    <select id="slt-cantones">
+                        <option value="">-- Seleccione un cantón --</option>
+                </select>
+                </div>
+                <div>
+                    <label for="">Distritos</label>
+                    <select id="slt-distritos">
+                        <option value="">-- Seleccione un distrito --</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Lugar de residencia</label>
                 <input type="text" class="form-control" />
             </div>
-
             <div class="form-group">
                 <label class="form-label mt-4">Descripción de la condición de la persona estudiante</label>
                 <textarea class="form-control" id="descripcion_condicion" rows="4"></textarea>
@@ -571,7 +591,7 @@
             <div class="form-group">
                 <input type="submit" value="Registrar" class="btn btn-primary" />
 
-            </div>
+            </div>                
         </form>
     </div>
 
@@ -584,5 +604,6 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    
     }
     }
