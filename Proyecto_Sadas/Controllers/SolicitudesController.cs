@@ -50,7 +50,21 @@ namespace Proyecto_Sadas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Registrar([Bind("id_solicitud,fecha_realiza,fecha_recibe,sede_recibe,nombre_persona_recibe,metodo_envio,apoyo_organizativo,producto_apoyo_organizativo,servicio_apoyo_empleados,servicio_apoyo_recibe,servicio_apoyo_recibe_region_educativa,apoyo_educativo_requerido,descripcion_condicion,id_centro_Educativo,id_historial")] Solicitud solicitud)
+        public async Task<IActionResult> Registrar
+            (
+                //Solicitud
+                [Bind("id_solicitud,fecha_realiza,fecha_recibe,sede_recibe,nombre_persona_recibe,metodo_envio,apoyo_organizativo,producto_apoyo_organizativo,servicio_apoyo_empleados,servicio_apoyo_recibe,servicio_apoyo_recibe_region_educativa,apoyo_educativo_requerido,descripcion_condicion,id_centro_Educativo,id_historial")] Solicitud solicitud,
+                //Estudiante
+                [Bind("id_persona,tipo_cedula_estudiante,id_estudiante,tipo_persona,nombre_estudiante,apellido_1_estudiante,apellido_2_estudiante,telefono_1_estudiante,telefono_2_estudiante,correo_1_estudiante,correo_1_estudiante,parenstesco_encargado,prioridad_encargado,fecha_nacimiento_estudiante,nivel_educativo_estudiante,slt-provincias,slt-cantones,slt-distritos,ubicacion_exacta_estudiante,descripcion_condicion,relacion_solicitante,otro_anote_solicitante")] Persona persona
+                //Madre
+                //Padre
+                //Encargado
+                //Centro Educativo
+                //Doncete Acargo
+                //Persona Acargo de la Direccion
+                //Persona Solicitante
+                //Funcionario
+            )
         {
             if (ModelState.IsValid)
             {
@@ -94,11 +108,20 @@ namespace Proyecto_Sadas.Controllers
                     }
                 }
 
+                
+
+
                 _context.Add(solicitud);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Consultar));
             }
             return View(solicitud);
+        }
+
+        public int calcularEdad(DateTime nacimiento)
+        {
+            int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
+            return edad;
         }
 
         // GET: Solicitudes/Modificar/5

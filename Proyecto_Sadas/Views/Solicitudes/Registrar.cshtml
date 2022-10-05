@@ -8,6 +8,7 @@
 <h1>Registrar</h1>
 
 <h4>Solicitud</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -59,7 +60,7 @@
             </div>
 
             <br />
-
+            <!-- Estudiante -->
             <h4>Información del estudiante que requiere la asesoría</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
@@ -96,7 +97,7 @@
             </div>
             <div>
                 <label class="control-label">Edad</label>
-                <input type="text" name="inputname" value="edad" disabled>
+                <input type="text" name="inputname" value="Edad" disabled>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1 del estudiante</label>
@@ -105,14 +106,14 @@
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2 del estudiante</label>
                 <input type="tel" class="form-control" id="telefono_2_estudiante">
-            </div>
+            </div> 
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
                 <input type="email" class="form-control" id="correo_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" id="correo_2_estudiante"/>
+                <input type="email" class="form-control" id="correo_1_estudiante" />
             </div>
             <div>
                 <div>
@@ -136,12 +137,14 @@
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Lugar de residencia</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" id="ubicacion_exacta_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Descripción de la condición de la persona estudiante</label>
                 <textarea class="form-control" id="descripcion_condicion" rows="4"></textarea>
             </div>
+
+            <!-- Madre -->
             <div class="form-group">
                 <label>Identificación de la madre</label>
                 <input type="text" class="form-control" />
@@ -440,6 +443,7 @@
                     <option>Otro</option>
                 </select>
             </div>
+          
             <h4>Información de la solicitud de asesoría</h4>
             <div class="form-group">
                 <label class="form-label mt-4">Motivo de la solicitud</label>
@@ -556,7 +560,7 @@
                 </div>
             </div>
             
-             <div>
+            <div>
                 <div class="form-check">
                     <label asp-for="apoyo_educativo_requerido" class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?</label>
                 
@@ -574,7 +578,7 @@
                 </div>
                 </div>
             </div>
-
+            
             <div class="form-group">
                 <label>Mencione el producto de apoyo solicitado</label>
                 <input type="text" class="form-control" />
