@@ -35,6 +35,5 @@ namespace Proyecto_Sadas.Models
         public IList<SolicitudFuncionario> solicitud_funcionario { get; set; } = default!;
         public IList<SolicitudAuditoria> solicitud_auditoria { get; set; } = default!;
 
-
     }
 }

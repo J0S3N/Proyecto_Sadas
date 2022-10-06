@@ -42,7 +42,8 @@ listaProvincias.addEventListener('change', () => {
 listaCantones.addEventListener('change', () => {
     cantonSeleccionado = listaCantones.value;
     mostrarDistritos(cantonSeleccionado);
-})const listaProvincias = document.querySelector('#slt-provincias');
+});
+const listaProvincias = document.querySelector('#slt-provincias');
 const listaCantones = document.querySelector('#slt-cantones');
 const listaDistritos = document.querySelector('#slt-distritos');
 let provinciaSeleccionada;
