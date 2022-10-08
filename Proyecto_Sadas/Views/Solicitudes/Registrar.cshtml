@@ -18,7 +18,7 @@
 
             <div class="form-group">
                 <label asp-for="id_solicitud" class="control-label">Código de solicitud </label>
-                <input type="text" name="inputname" disabled>
+                <input type="text" class="inputname" id="codigo_solicitud" name="codigo_solicitud" maxlength="10" required/>
             </div>
             <div class="form-group">
                 <label asp-for="fecha_realiza" class="control-label">Fecha de la solicitud: </label>
@@ -54,7 +54,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="nombre_persona_recibe" class="control-label">Nombre de la persona que recibe la solicitud</label>
-                <input asp-for="nombre_persona_recibe" class="form-control" />
+                <input asp-for="nombre_persona_recibe" class="form-control" maxlength="20" required placeholder="Digite el nombre y dos apellidos" />
                 <span asp-validation-for="nombre_persona_recibe" class="text-danger"></span>
             </div>
 
@@ -75,19 +75,19 @@
             </div>
             <div class="form-group">
                 <label>Identificación del estudiante</label>
-                <input type="text" class="form-control" id="numero_cedula_estudiante" name="numero_cedula"/>
+                <input type="text" class="form-control" id="numero_cedula_estudiante" name="numero_cedula "maxlength="20" required placeholder="Ingresar sin guiones ni espacios."/>
             </div>
             <div class="form-group">
                 <label>Nombre del estudiante</label>
-                <input type="text" class="form-control" id="nombre_estudiante" />
+                <input type="text" class="form-control" id="nombre_estudiante" maxlength="20" required >
             </div>
             <div class="form-group">
                 <label>Primer apellido del estudiante</label>
-                <input type="text" class="form-control" id="apellido_1_estudiante"/>
+                <input type="text" class="form-control" id="apellido_1_estudiante" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del estudiante</label>
-                <input type="text" class="form-control" id="apellido_2_estudiante"/>
+                <input type="text" class="form-control" id="apellido_2_estudiante" maxlength="20" require/>
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha de nacimiento: </label>
@@ -96,23 +96,23 @@
             </div>
             <div>
                 <label class="control-label">Edad</label>
-                <input type="text" name="inputname" value="edad" disabled>
+                <input type="number" name="inputname" value="edad"  required>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1 del estudiante</label>
-                <input type="tel" class="form-control" id="telefono_1_estudiante"/>
+                <input type="tel" class="form-control" id="telefono_1_estudiante" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2 del estudiante</label>
-                <input type="tel" class="form-control" id="telefono_2_estudiante"/>
+                <input type="tel" class="form-control" id="telefono_2_estudiante" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" id="correo_1_estudiante"/>
+                <input type="email" class="form-control" id="correo_1_estudiante" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" id="correo_2_estudiante"/>
+                <input type="email" class="form-control" id="correo_2_estudiante" maxlength="20" required/>
             </div>
             <div>
                 <div>
@@ -158,35 +158,35 @@
             </div>
             <div class="form-group">
                 <label>Identificación de la madre</label>
-                <input type="text" class="form-control" name="tipo_cedula_madre" />
+                <input type="text" class="form-control" name="tipo_cedula_madre" maxlength="20" required  />
             </div>
             <div class="form-group">
                 <label>Nombre de la madre</label>
-                <input type="text" class="form-control" name="nombre_madre"/>
+                <input type="text" class="form-control" name="nombre_madre" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Primer apellido de la madre</label>
-                <input type="text" class="form-control" name="apellido_1_madre"/>
+                <input type="text" class="form-control" name="apellido_1_madre" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido de la madre</label>
-                <input type="text" class="form-control" name="apellido_2_madre"/>
+                <input type="text" class="form-control" name="apellido_2_madre" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_madre"/>
+                <input type="tel" class="form-control" name="telefono_1_madre" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_madre"/>
+                <input type="tel" class="form-control" name="telefono_2_madre" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 1</label>
-                <input type="email" class="form-control" name="correo_1_madre"/>
+                <input type="email" class="form-control" name="correo_1_madre"maxlength="30" required placeholder="No ingresar caracteres espciales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 2</label>
-                <input type="email" class="form-control" name="correo_2_madre"/>
+                <input type="email" class="form-control" name="correo_2_madre" maxlength="30" required placeholder="No ingresar caracteres espciales"/>
             </div>
             
           
@@ -205,36 +205,36 @@
             </div> 
             <div class="form-group">
                 <label>Identificación del padre</label>
-                <input type="text" class="form-control" name="numero_cedula_padre"/>
+                <input type="text" class="form-control" name="numero_cedula_padre" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Nombre del padre</label>
-                <input type="text" class="form-control" name="nombre_padre"/>
+                <input type="text" class="form-control" name="nombre_padre" maxlength="20" required/>
             </div>
             
             <div class="form-group">
                 <label>Primer apellido del padre</label>
-                <input type="text" class="form-control" name="apellido_1_padre"/>
+                <input type="text" class="form-control" name="apellido_1_padre" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del padre</label>
-                <input type="text" class="form-control" name="apellido_2_padre"/>
+                <input type="text" class="form-control" name="apellido_2_padre" maxlength="20" />
             </div>
              <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_padre"/>
+                <input type="tel" class="form-control" name="telefono_1_padre" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_padre"/>
+                <input type="tel" class="form-control" name="telefono_2_padre" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_padre"/>
+                <input type="email" class="form-control" name="correo_1_padre" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_padre"/>
+                <input type="email" class="form-control" name="correo_2_padre" maxlength="20" required/>
             </div>
 
             <div class="form-group">
@@ -252,74 +252,74 @@
             </div>
             <div class="form-group">
                 <label>Identificación del encargado</label>
-                <input type="text" class="form-control" name="numero_cedula_encargado" />
+                <input type="text" class="form-control" name="numero_cedula_encargado"  maxlength="20" required />
             </div>
             <div class="form-group">
                 <label>Nombre del encargado</label>
-                <input type="text" class="form-control" name="nombre_encargado"/>
+                <input type="text" class="form-control" name="nombre_encargado" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Primer apellido del encargado</label>
-                <input type="text" class="form-control" name="apellido_1_encargado"/>
+                <input type="text" class="form-control" name="apellido_1_encargado" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del encargado</label>
-                <input type="text" class="form-control" name="apellido_2_encargado"/>
+                <input type="text" class="form-control" name="apellido_2_encargado" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Parentesco</label>
-                <input type="text" class="form-control" name="parentesco"/>
+                <input type="text" class="form-control" name="parentesco" maxlength="20" required />
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_encargado"/>
+                <input type="tel" class="form-control" name="telefono_1_encargado" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_encargado"/>
+                <input type="tel" class="form-control" name="telefono_2_encargado" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_encargado"/>
+                <input type="email" class="form-control" name="correo_1_encargado" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_encargado"/>
+                <input type="email" class="form-control" name="correo_2_encargado" maxlength="20" required />
             </div>
 
             <h4>Información del centro educativo que asiste la persona estudiante</h4>
             <div class="form-group">
                 <label>Nivel educativo que cursa</label>
-                <input type="text" class="form-control" name="nivel_educativo_estudiante"/>
+                <input type="text" class="form-control" name="nivel_educativo_estudiante" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Nombre del centro educativo</label>
-                <input type="text" class="form-control" name="nombre_centro_educativo" />
+                <input type="text" class="form-control" name="nombre_centro_educativo" maxlength="20" required />
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_centro_educativo"/>
+                <input type="tel" class="form-control" name="telefono_1_centro_educativo" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_centro_educativo"/>
+                <input type="tel" class="form-control" name="telefono_2_centro_educativo" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 1</label>
-                <input type="email" class="form-control" name="correo_1_centro_educativo"/>
+                <input type="email" class="form-control" name="correo_1_centro_educativo" maxlength="30" required />
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 2</label>
-                <input type="email" class="form-control" name="correo_2_centro_educativo"/>
+                <input type="email" class="form-control" name="correo_2_centro_educativo" maxlength="30"/>
             </div>
             <div class="form-group">
                 <label>Ubicación del centro educativo</label>
                 <label>Provincia</label>
-                <input type="text" class="form-control" name="provincia_centro_educativo"/>
+                <input type="text" class="form-control" name="provincia_centro_educativo" maxlength="20" required/>
                 <label>Cantón</label>
-                <input type="text" class="form-control" name="canton_centro_educativo"/>
+                <input type="text" class="form-control" name="canton_centro_educativo" maxlength="20" required />
                 <label>Distrito</label>
-                <input type="text" class="form-control" name="distrito_centro_educativo"/>
+                <input type="text" class="form-control" name="distrito_centro_educativo" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Ubicación exacta del centro educativo</label>
@@ -327,19 +327,19 @@
             </div>
             <div class="form-group">
                 <label>Dependencia</label>
-                <input type="text" class="form-control" name="dependencia"/>
+                <input type="text" class="form-control" name="dependencia" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Región Educativa</label>
-                <input type="text" class="form-control" name="region_educativo"/>
+                <input type="text" class="form-control" name="region_educativo" maxlength="20" required />
             </div>
             <div class="form-group">
                 <label>Circuito</label>
-                <input type="text" class="form-control" name="circuito"/>
+                <input type="text" class="form-control" name="circuito" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Nombre completo de la persona a cargo de la Dirección</label>
-                <input type="text" class="form-control" name="encargado_centro_educativo"/>
+                <input type="text" class="form-control" name="encargado_centro_educativo" maxlength="20" required/>
             </div>
 
             <h4>Información del docente a cargo</h4>
@@ -358,36 +358,36 @@
             </div>
             <div class="form-group">
                 <label>Identificación del docente a cargo</label>
-                <input type="text" class="form-control" name="numero_cedula_docente"/>
+                <input type="text" class="form-control" name="numero_cedula_docente" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Nombre del docente a cargo</label>
-                <input type="text" class="form-control" name="nombre_docente" />
+                <input type="text" class="form-control" name="nombre_docente" maxlength="20" required />
             </div>
             
             <div class="form-group">
                 <label>Primer apellido del docente a cargo</label>
-                <input type="text" class="form-control" name="apellido1_docente" />
+                <input type="text" class="form-control" name="apellido1_docente"  maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del docente a cargo</label>
-                <input type="text" class="form-control" name="apellido2_docente" />
+                <input type="text" class="form-control" name="apellido2_docente" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_docente">
+                <input type="tel" class="form-control" name="telefono_1_docente" maxlength="20" required>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_docente">
+                <input type="tel" class="form-control" name="telefono_2_docente" maxlength="20" required>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_docente"/>
+                <input type="email" class="form-control" name="correo_1_docente" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_docente"/>
+                <input type="email" class="form-control" name="correo_2_docente" maxlength="20" required/>
             </div>
             
             <h4>Información de la persona solicitante</h4>
@@ -406,35 +406,35 @@
             </div>
             <div class="form-group">
                 <label>Identificación de la persona solicitante</label>
-                <input type="text" class="form-control" name="numero_cedula_solicitante"/>
-            </div
+                <input type="text" class="form-control" name="numero_cedula_solicitante" maxlength="20" required/>
+            </div>
             <div class="form-group">
                 <label>Nombre del solicitante</label>
-                <input type="text" class="form-control" name="nombre_solicitante"/>
+                <input type="text" class="form-control" name="nombre_solicitante" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Primer apellido del solicitante</label>
-                <input type="text" class="form-control" name="apellido_1_solicitante"/>
+                <input type="text" class="form-control" name="apellido_1_solicitante" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del solicitante</label>
-                <input type="text" class="form-control" name="apellido_2_solicitante"/>
+                <input type="text" class="form-control" name="apellido_2_solicitante" maxlength="20" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_solicitante">
+                <input type="tel" class="form-control" name="telefono_1_solicitante" maxlength="20" required>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_solicitante">
+                <input type="tel" class="form-control" name="telefono_2_solicitante" maxlength="20" required>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_solicitante"/>
+                <input type="email" class="form-control" name="correo_1_solicitante" maxlength="30" required/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_solicitante"/>
+                <input type="email" class="form-control" name="correo_2_solicitante" maxlength="30" required/>
             </div>
             <div class="form-group">
                 <label for="puesto_desenpena" class="form-label mt-4">Puesto que desenpeña</label>
