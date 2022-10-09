@@ -22,6 +22,7 @@ namespace Proyecto_Sadas.Data
         public DbSet<Proyecto_Sadas.Models.Historial> Historial { get; set; } = default!;
 
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SolicitudArchivo>().HasKey(sc => new { sc.id_archivo, sc.id_solicitud });
@@ -39,6 +40,7 @@ namespace Proyecto_Sadas.Data
                .HasOne(s => s.historial)
                .WithMany(g => g.solicitudes)
                .HasForeignKey(s => s.id_historial);
+
         }
     }
 }

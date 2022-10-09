@@ -1,9 +1,7 @@
 ﻿@model Proyecto_Sadas.Models.Solicitud
-
 @{
     ViewData["Title"] = "Registrar";
 }
-
 
 <h1>Registrar</h1>
 
@@ -12,13 +10,11 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Registrar">
-            
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <h4>Información de la solicitud</h4>
-
             <div class="form-group">
                 <label asp-for="id_solicitud" class="control-label">Código de solicitud </label>
-                <input type="text" class="inputname" id="codigo_solicitud" name="codigo_solicitud" maxlength="10" required/>
+                <input type="text" name="inputname" disabled>
             </div>
             <div class="form-group">
                 <label asp-for="fecha_realiza" class="control-label">Fecha de la solicitud: </label>
@@ -54,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="nombre_persona_recibe" class="control-label">Nombre de la persona que recibe la solicitud</label>
-                <input asp-for="nombre_persona_recibe" class="form-control" maxlength="20" required placeholder="Digite el nombre y dos apellidos" />
+                <input asp-for="nombre_persona_recibe" class="form-control" />
                 <span asp-validation-for="nombre_persona_recibe" class="text-danger"></span>
             </div>
 
@@ -75,19 +71,19 @@
             </div>
             <div class="form-group">
                 <label>Identificación del estudiante</label>
-                <input type="text" class="form-control" id="numero_cedula_estudiante" name="numero_cedula "maxlength="20" required placeholder="Ingresar sin guiones ni espacios."/>
+                <input type="text" class="form-control" id="numero_cedula_estudiante" name="numero_cedula"/>
             </div>
             <div class="form-group">
                 <label>Nombre del estudiante</label>
-                <input type="text" class="form-control" id="nombre_estudiante" maxlength="20" required >
+                <input type="text" class="form-control" id="nombre_estudiante" />
             </div>
             <div class="form-group">
                 <label>Primer apellido del estudiante</label>
-                <input type="text" class="form-control" id="apellido_1_estudiante" maxlength="20" required/>
+                <input type="text" class="form-control" id="apellido_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del estudiante</label>
-                <input type="text" class="form-control" id="apellido_2_estudiante" maxlength="20" require/>
+                <input type="text" class="form-control" id="apellido_2_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha de nacimiento: </label>
@@ -96,40 +92,40 @@
             </div>
             <div>
                 <label class="control-label">Edad</label>
-                <input type="number" name="inputname" value="edad"  required>
+                <input type="text" name="inputname" value="edad" disabled>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1 del estudiante</label>
-                <input type="tel" class="form-control" id="telefono_1_estudiante" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
+                <input type="tel" class="form-control" id="telefono_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2 del estudiante</label>
-                <input type="tel" class="form-control" id="telefono_2_estudiante" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
+                <input type="tel" class="form-control" id="telefono_2_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" id="correo_1_estudiante" maxlength="20" required/>
+                <input type="email" class="form-control" id="correo_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" id="correo_2_estudiante" maxlength="20" required/>
+                <input type="email" class="form-control" id="correo_2_estudiante"/>
             </div>
             <div>
                 <div>
                     <label for="">Provincias</label>
-                    <select id="slt-provincias" name="provincia_estudiante">
+                    <select id="slt-provincias">
                         <option value="">-- Seleccione una provincia --</option>
                     </select>
                 </div>
                 <div>
                     <label for="">Cantones</label>
-                    <select id="slt-cantones" name="canton_estudiante">
+                    <select id="slt-cantones">
                         <option value="">-- Seleccione un cantón --</option>
                 </select>
                 </div>
                 <div>
                     <label for="">Distritos</label>
-                    <select id="slt-distritos" namename="distrito_estudiante">
+                    <select id="slt-distritos">
                         <option value="">-- Seleccione un distrito --</option>
                     </select>
                 </div>
@@ -158,35 +154,35 @@
             </div>
             <div class="form-group">
                 <label>Identificación de la madre</label>
-                <input type="text" class="form-control" name="tipo_cedula_madre" maxlength="20" required  />
+                <input type="text" class="form-control" name="tipo_cedula_madre" />
             </div>
             <div class="form-group">
                 <label>Nombre de la madre</label>
-                <input type="text" class="form-control" name="nombre_madre" maxlength="20" required/>
+                <input type="text" class="form-control" name="nombre_madre"/>
             </div>
             <div class="form-group">
                 <label>Primer apellido de la madre</label>
-                <input type="text" class="form-control" name="apellido_1_madre" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido_1_madre"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido de la madre</label>
-                <input type="text" class="form-control" name="apellido_2_madre" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido_2_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_madre" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
+                <input type="tel" class="form-control" name="telefono_1_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_madre" maxlength="20" required placeholder="No ingresar caracteres especiales"/>
+                <input type="tel" class="form-control" name="telefono_2_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 1</label>
-                <input type="email" class="form-control" name="correo_1_madre"maxlength="30" required placeholder="No ingresar caracteres espciales"/>
+                <input type="email" class="form-control" name="correo_1_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 2</label>
-                <input type="email" class="form-control" name="correo_2_madre" maxlength="30" required placeholder="No ingresar caracteres espciales"/>
+                <input type="email" class="form-control" name="correo_2_madre"/>
             </div>
             
           
@@ -205,36 +201,36 @@
             </div> 
             <div class="form-group">
                 <label>Identificación del padre</label>
-                <input type="text" class="form-control" name="numero_cedula_padre" maxlength="20" required/>
+                <input type="text" class="form-control" name="numero_cedula_padre"/>
             </div>
             <div class="form-group">
                 <label>Nombre del padre</label>
-                <input type="text" class="form-control" name="nombre_padre" maxlength="20" required/>
+                <input type="text" class="form-control" name="nombre_padre"/>
             </div>
             
             <div class="form-group">
                 <label>Primer apellido del padre</label>
-                <input type="text" class="form-control" name="apellido_1_padre" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido_1_padre"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del padre</label>
-                <input type="text" class="form-control" name="apellido_2_padre" maxlength="20" />
+                <input type="text" class="form-control" name="apellido_2_padre"/>
             </div>
              <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_padre" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
+                <input type="tel" class="form-control" name="telefono_1_padre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_padre" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
+                <input type="tel" class="form-control" name="telefono_2_padre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_padre" maxlength="20" required/>
+                <input type="email" class="form-control" name="correo_1_padre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_padre" maxlength="20" required/>
+                <input type="email" class="form-control" name="correo_2_padre"/>
             </div>
 
             <div class="form-group">
@@ -252,100 +248,99 @@
             </div>
             <div class="form-group">
                 <label>Identificación del encargado</label>
-                <input type="text" class="form-control" name="numero_cedula_encargado"  maxlength="20" required />
+                <input type="text" class="form-control" name="numero_cedula_encargado" />
             </div>
             <div class="form-group">
                 <label>Nombre del encargado</label>
-                <input type="text" class="form-control" name="nombre_encargado" maxlength="20" required/>
+                <input type="text" class="form-control" name="nombre_encargado"/>
             </div>
             <div class="form-group">
                 <label>Primer apellido del encargado</label>
-                <input type="text" class="form-control" name="apellido_1_encargado" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido_1_encargado"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del encargado</label>
-                <input type="text" class="form-control" name="apellido_2_encargado" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido_2_encargado"/>
             </div>
             <div class="form-group">
                 <label>Parentesco</label>
-                <input type="text" class="form-control" name="parentesco" maxlength="20" required />
+                <input type="text" class="form-control" name="parentesco"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_encargado" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
+                <input type="tel" class="form-control" name="telefono_1_encargado"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_encargado" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
+                <input type="tel" class="form-control" name="telefono_2_encargado"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_encargado" maxlength="20" required/>
+                <input type="email" class="form-control" name="correo_1_encargado"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_encargado" maxlength="20" required />
+                <input type="email" class="form-control" name="correo_2_encargado"/>
             </div>
 
             <h4>Información del centro educativo que asiste la persona estudiante</h4>
             <div class="form-group">
                 <label>Nivel educativo que cursa</label>
-                <input type="text" class="form-control" name="nivel_educativo_estudiante" maxlength="20" required/>
+                <input type="text" class="form-control" name="nivel_educativo_estudiante"/>
             </div>
             <div class="form-group">
                 <label>Nombre del centro educativo</label>
-                <input type="text" class="form-control" name="nombre_centro_educativo" maxlength="20" required />
+                @Html.TextBoxFor(model => model.centro_Educativo.nombre, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_centro_educativo" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
+                @Html.TextBoxFor(model => model.centro_Educativo.telefono_1, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_centro_educativo" maxlength="20" required placeholder="No ingresar caracteres espciales"/>
+                @Html.TextBoxFor(model => model.centro_Educativo.telefono_2, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 1</label>
-                <input type="email" class="form-control" name="correo_1_centro_educativo" maxlength="30" required />
+                <input asp-for=centro_Educativo.correo_1 type="email" class="form-control" name="correo_2_encargado"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 2</label>
-                <input type="email" class="form-control" name="correo_2_centro_educativo" maxlength="30"/>
+                <input asp-for=centro_Educativo.correo_2 type="email" class="form-control" name="correo_2_encargado"/>
             </div>
             <div class="form-group">
                 <label>Ubicación del centro educativo</label>
                 <label>Provincia</label>
-                <input type="text" class="form-control" name="provincia_centro_educativo" maxlength="20" required/>
+                <input type="text" asp-for="centro_Educativo.provincia" class="form-control" name="provincia_centro_educativo"/>
                 <label>Cantón</label>
-                <input type="text" class="form-control" name="canton_centro_educativo" maxlength="20" required />
+                <input type="text" asp-for="centro_Educativo.canton" class="form-control" name="canton_centro_educativo"/>
                 <label>Distrito</label>
-                <input type="text" class="form-control" name="distrito_centro_educativo" maxlength="20" required/>
+                <input type="text" asp-for="centro_Educativo.distrito" class="form-control" name="distrito_centro_educativo"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Ubicación exacta del centro educativo</label>
-                <textarea class="form-control" id="ubicacion_exacta" rows="4" name="ubicacion_exacta"></textarea>
+                <textarea class="form-control" asp-for="centro_Educativo.ubicacion_exacta" id="ubicacion_exacta" rows="4" name="ubicacion_exacta"></textarea>
             </div>
             <div class="form-group">
                 <label>Dependencia</label>
-                <input type="text" class="form-control" name="dependencia" maxlength="20" required/>
+                <input type="text" class="form-control" asp-for="centro_Educativo.dependencia" name="dependencia"/>
             </div>
             <div class="form-group">
                 <label>Región Educativa</label>
-                <input type="text" class="form-control" name="region_educativo" maxlength="20" required />
+                <input type="text" class="form-control" asp-for="centro_Educativo.region_educativa" name="region_educativo"/>
             </div>
             <div class="form-group">
                 <label>Circuito</label>
-                <input type="text" class="form-control" name="circuito" maxlength="20" required/>
+                <input type="text" class="form-control" asp-for="centro_Educativo.circuito" name="circuito"/>
             </div>
             <div class="form-group">
                 <label>Nombre completo de la persona a cargo de la Dirección</label>
-                <input type="text" class="form-control" name="encargado_centro_educativo" maxlength="20" required/>
+                <input type="text" class="form-control" asp-for="centro_Educativo.encargado" name="encargado_centro_educativo"/>
             </div>
 
             <h4>Información del docente a cargo</h4>
             <div class="form-group">
-                <label class="control-label">Tipo de identificación</label>
-                
+                <label class="control-label">Tipo de identificación</label>                
                 <select class="form-select" id="tipo_cedula" name="tipo_cedula_docente">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
@@ -358,36 +353,36 @@
             </div>
             <div class="form-group">
                 <label>Identificación del docente a cargo</label>
-                <input type="text" class="form-control" name="numero_cedula_docente" maxlength="20" required/>
+                <input type="text" class="form-control" name="numero_cedula_docente"/>
             </div>
             <div class="form-group">
                 <label>Nombre del docente a cargo</label>
-                <input type="text" class="form-control" name="nombre_docente" maxlength="20" required />
+                <input type="text" class="form-control" name="nombre_docente" />
             </div>
             
             <div class="form-group">
                 <label>Primer apellido del docente a cargo</label>
-                <input type="text" class="form-control" name="apellido1_docente"  maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido1_docente" />
             </div>
             <div class="form-group">
                 <label>Segundo apellido del docente a cargo</label>
-                <input type="text" class="form-control" name="apellido2_docente" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido2_docente" />
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_docente" maxlength="20" required>
+                <input type="tel" class="form-control" name="telefono_1_docente">
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_docente" maxlength="20" required>
+                <input type="tel" class="form-control" name="telefono_2_docente">
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_docente" maxlength="20" required/>
+                <input type="email" class="form-control" name="correo_1_docente"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_docente" maxlength="20" required/>
+                <input type="email" class="form-control" name="correo_2_docente"/>
             </div>
             
             <h4>Información de la persona solicitante</h4>
@@ -406,35 +401,35 @@
             </div>
             <div class="form-group">
                 <label>Identificación de la persona solicitante</label>
-                <input type="text" class="form-control" name="numero_cedula_solicitante" maxlength="20" required/>
+                <input type="text" class="form-control" name="numero_cedula_solicitante"/>
             </div>
             <div class="form-group">
                 <label>Nombre del solicitante</label>
-                <input type="text" class="form-control" name="nombre_solicitante" maxlength="20" required/>
+                <input type="text" class="form-control" name="nombre_solicitante"/>
             </div>
             <div class="form-group">
                 <label>Primer apellido del solicitante</label>
-                <input type="text" class="form-control" name="apellido_1_solicitante" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido_1_solicitante"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del solicitante</label>
-                <input type="text" class="form-control" name="apellido_2_solicitante" maxlength="20" required/>
+                <input type="text" class="form-control" name="apellido_2_solicitante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_solicitante" maxlength="20" required>
+                <input type="tel" class="form-control" name="telefono_1_solicitante">
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_solicitante" maxlength="20" required>
+                <input type="tel" class="form-control" name="telefono_2_solicitante">
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_solicitante" maxlength="30" required/>
+                <input type="email" class="form-control" name="correo_1_solicitante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_solicitante" maxlength="30" required/>
+                <input type="email" class="form-control" name="correo_2_solicitante"/>
             </div>
             <div class="form-group">
                 <label for="puesto_desenpena" class="form-label mt-4">Puesto que desenpeña</label>
@@ -489,24 +484,18 @@
             
             <h4>Observaciones</h4>
             <div>
-                <div class="form-check">
-                    <label  class="control-label">Tuvo asesoría del Cenarec anteriormente</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sí
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        No
-                    </label>
-                </div>
+                @Html.Label("","¿Tuvo asesoría del Cenarec anteriormente?",new { @class = "control-label" })
+                <br />
+                @Html.Label("Sí:")
+                @Html.RadioButtonFor(h => h.historial.asesoria_previa, 1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                
+                @Html.Label("No:")
+                @Html.RadioButtonFor(h => h.historial.asesoria_previa, 0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
             </div>
             <div class="form-group">
                 <label class="control-label">Sede en donde recibió asesoría anteriormente</label>
                 
-                <select class="form-select" id="tipo_cedula">
+                <select asp-for=historial.sede_asesoria_previa class="form-select" id="tipo_cedula">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Limón</option>
                     <option>San Carlos</option>
@@ -517,72 +506,48 @@
                 <span class="text-danger"></span>
             </div>
             <div>
-                <div class="form-check">
-                    <label class="control-label">Adjunta certificación médica emitida por la CCSS</label>
-                    <input class="form-check-input" type="radio" name="adjunta_certificacion_medica_CCSS" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sí
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="adjunta_certificacion_medica_CCSS" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        No
-                    </label>
-                </div>
+                @Html.Label("","¿Adjunta certificación médica emitida por la Caja Costarricences del Seguro Social (CCSS)?",new { @class = "control-label" })
+                <br />
+                @Html.Label("Sí:")
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CCSS,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                
+                @Html.Label("No:")
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CCSS,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
             </div>
             <div>
-                <div class="form-check">
-                    <label class="control-label">Adjunta certificación de discapacidad emitida por el Consejo Nacional de Personas con Discapacidad</label>
-                    <input class="form-check-input" type="radio" name="adjunta_certificacion_medica_CONAPDIS" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sí
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="adjunta_certificacion_medica_CONAPDIS" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        No
-                    </label>
-                </div>
+                @Html.Label("","¿Adjunta certificación de discapacidad emitida por el Consejo Nacional de Personas con Discapacidad (CONAPDIS)?",new { @class = "control-label" })
+                <br />
+                @Html.Label("Sí:")
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CONAPDIS,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                
+                @Html.Label("No:")
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CONAPDIS,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
             </div>
             <div>
-                <div class="form-check">
-                    <label class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?</label>
-                    <input class="form-check-input" type="radio" name="producto_apoyo_gubernamental" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sí
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="producto_apoyo_gubernamental" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        No
-                    </label>
-                </div>
+                @Html.Label("","¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?",new { @class = "control-label" })
+                <br />
+                @Html.Label("Sí:")
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_gubernamental,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                
+                @Html.Label("No:")
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_gubernamental,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
             </div>
             <div class="form-group">
                 <label>Mencione el producto de apoyo solicitado</label>
-                <input type="text" class="form-control" name="producto_apoyo_gubernamental_descripcion"/>
+                @Html.TextBoxFor(model => model.historial.producto_apoyo_gubernamental_descripcion, new { @class = "form-control" })
             </div>
             <div>
-                <div class="form-check">
-                    <label class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?</label>
-                    <input class="form-check-input" type="radio" name="producto_apoyo_no_gubernamental" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sí
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="producto_apoyo_no_gubernamental" id="flexRadioDefault2" checked/>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        No
-                    </label>
-                </div>
+                @Html.Label("","¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?",new { @class = "control-label" })
+                <br />
+                @Html.Label("Sí:")
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_no_gubernamental,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                
+                @Html.Label("No:")
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_no_gubernamental,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
             </div>
             <div class="form-group">
                 <label>Mencione el producto de apoyo solicitado</label>
-                <input type="text" class="form-control" name="producto_apoyo_no_gubernamental_descripcion"/>
+                @Html.TextBoxFor(model => model.historial.producto_apoyo_no_gubernamental_descripcion, new { @class = "form-control" })
             </div>
             <div class="form-group row">
                 <label asp-for="solicitud_archivo" class="col-sm-2 col-form-label">Archivos Adjuntos</label>
@@ -593,7 +558,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Registrar" class="btn btn-primary" />
-            </div>                
+            </div> 
         </form>
     </div>
 </div>
@@ -605,6 +570,5 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    
     }
     }
