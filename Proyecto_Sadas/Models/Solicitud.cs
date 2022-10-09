@@ -35,11 +35,17 @@ namespace Proyecto_Sadas.Models
         public IList<SolicitudFuncionario> solicitud_funcionario { get; set; } = default!;
         public IList<SolicitudAuditoria> solicitud_auditoria { get; set; } = default!;
 
+        [NotMapped]
         public Persona docente { get; set; } = default!;
+        [NotMapped]
         public Persona estudiante { get; set; } = default!;
+        [NotMapped]
         public Persona solicitante { get; set; } = default!;
+        [NotMapped]
         public Persona madre { get; set; } = default!;
+        [NotMapped]
         public Persona padre { get; set; } = default!;
+        [NotMapped]
         public Persona encargado { get; set; } = default!;
 
     }
