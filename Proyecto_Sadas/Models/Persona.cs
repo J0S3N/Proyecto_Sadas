@@ -9,16 +9,22 @@ namespace Proyecto_Sadas.Models
     {
         [Key]
         public int id_persona { get; set; }
+        [Required]
         public string tipo_cedula { get; set; }
         public string numero_cedula { get; set; }
         public string tipo_persona { get; set; }
+
         [Required]
         public string nombre { get; set; }
         public string apellido_1 { get; set; }
         public string apellido_2 { get; set; }
+        [Phone]
         public int telefono_1 { get; set; }
+        [Phone]
         public int telefono_2 { get; set; }
+        [EmailAddress]
         public string correo_1 { get; set; }
+        [EmailAddress]
         public string correo_2 { get; set; }
         public string parenstesco_encargado { get; set; }
         public int prioridad_encargado { get; set; }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using KeyAttribute = System.ComponentModel.DataAnnotations.KeyAttribute;
 
 namespace Proyecto_Sadas.Models
@@ -9,10 +10,14 @@ namespace Proyecto_Sadas.Models
     {
         [Key]
         public int id_solicitud { get; set; }
+        [Required]
         public DateTime fecha_realiza { get; set; }
+        [Required]
         public DateTime fecha_recibe { get; set; }
+        [Required]
         public string sede_recibe { get; set; }
         public string nombre_persona_recibe { get; set; }
+        [Required]
         public string metodo_envio { get; set; }
         public string apoyo_organizativo { get; set; }
         public string producto_apoyo_organizativo { get; set; }
@@ -47,6 +52,5 @@ namespace Proyecto_Sadas.Models
         public Persona padre { get; set; } = default!;
         [NotMapped]
         public Persona encargado { get; set; } = default!;
-
     }
 }

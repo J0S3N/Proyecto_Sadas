@@ -53,145 +53,76 @@ namespace Proyecto_Sadas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Registrar(
             [Bind("id_solicitud,fecha_solicit  ud,fecha_respuesta,estado,observaciones,id_centro_Educativo,id_historial")] Solicitud solicitud, Historial historial,
-            CentroEducativo centroEducativo
-            )
+            CentroEducativo centroEducativo, Persona estudiante, Persona docente, Persona madre, Persona padre, Persona solicitante, Persona encargado)
         {
-            Persona persona = new Persona();
 
-            _context.Add(centroEducativo);
+            estudiante.tipo_persona = "Estudiante";
+            docente.tipo_persona = "Docente";
+            madre.tipo_persona = "Madre";
+            padre.tipo_persona = "Padre";
+            solicitante.tipo_persona = "Solicitante";
+            encargado.tipo_persona = "Encargado";
 
-            _context.Add(historial);
-
-            /*
-            Persona madre = new Persona
+            SolicitudPersona p1 = new SolicitudPersona()
             {
-                tipo_cedula = tipo_cedula_madre,
-                numero_cedula = numero_cedula_madre,
-                tipo_persona = "Madre",
-                nombre = nombre_madre,
-                apellido_1 = apellido_1_madre,
-                apellido_2 = apellido_2_madre,
-                telefono_1 = telefono_1_madre,
-                telefono_2 = telefono_2_madre,
-                correo_1 = correo_1_madre,
-                correo_2 = correo_2_madre,
-                parenstesco_encargado = "",
-                prioridad_encargado = 0,
-                fecha_nacimiento_estudiante = Convert.ToDateTime("00/00/2000"),
-                nivel_educativo_estudiante = "",
-                provincia_estudiante = "",
-                canton_estudiante = "",
-                distrito_estudiante = "",
-                ubicacion_exacta_estudiante = "",
-                observaciones_estudiante = "",
-                relacion_solicitante = "",
-                otro_anote_solicitante = ""
+                id_solicitud = solicitud.id_solicitud,
+                id_persona = estudiante.id_persona,
             };
 
-            Persona padre = new Persona
+            SolicitudPersona p2 = new SolicitudPersona()
             {
-                tipo_cedula = tipo_cedula_padre,
-                numero_cedula = numero_cedula_padre,
-                tipo_persona = "Padre",
-                nombre = nombre_padre,
-                apellido_1 = apellido1_padre,
-                apellido_2 = apellido2_padre,
-                telefono_1 = telefono_1_padre,
-                telefono_2 = telefono_2_padre,
-                correo_1 = correo_1_padre,
-                correo_2 = correo_2_padre,
-                parenstesco_encargado = "",
-                prioridad_encargado = 0,
-                fecha_nacimiento_estudiante = Convert.ToDateTime("00/00/2000"),
-                nivel_educativo_estudiante = "",
-                provincia_estudiante = "",
-                canton_estudiante = "",
-                distrito_estudiante = "",
-                ubicacion_exacta_estudiante = "",
-                observaciones_estudiante = "",
-                relacion_solicitante = "",
-                otro_anote_solicitante = ""
+                id_solicitud = solicitud.id_solicitud,
+                id_persona = docente.id_persona,
             };
 
-            Persona docente = new Persona
+            SolicitudPersona p3 = new SolicitudPersona()
             {
-                tipo_cedula = tipo_cedula_docente,
-                numero_cedula = numero_cedula_docente,
-                tipo_persona = "Docente",
-                nombre = nombre_docente,
-                apellido_1 = apellido1_docente,
-                apellido_2 = apellido2_docente,
-                telefono_1 = telefono_1_docente,
-                telefono_2 = telefono_2_docente,
-                correo_1 = correo_1_docente,
-                correo_2 = correo_2_docente,
-                parenstesco_encargado = "",
-                prioridad_encargado = 0,
-                fecha_nacimiento_estudiante = Convert.ToDateTime("00/00/2000"),
-                nivel_educativo_estudiante = "",
-                provincia_estudiante = "",
-                canton_estudiante = "",
-                distrito_estudiante = "",
-                ubicacion_exacta_estudiante = "",
-                observaciones_estudiante = "",
-                relacion_solicitante = "",
-                otro_anote_solicitante = ""
+                id_solicitud = solicitud.id_solicitud,
+                id_persona = madre.id_persona,
             };
 
-            Persona solicitante = new Persona
+            SolicitudPersona p4 = new SolicitudPersona()
             {
-                tipo_cedula = tipo_cedula_solicitante,
-                numero_cedula = numero_cedula_solicitante,
-                tipo_persona = "Solicitante",
-                nombre = nombre_solicitante,
-                apellido_1 = apellido_1_solicitante,
-                apellido_2 = apellido_2_solicitante,
-                telefono_1 = telefono_1_solicitante,
-                telefono_2 = telefono_2_solicitante,
-                correo_1 = correo_1_solicitante,
-                correo_2 = correo_2_solicitante,
-                parenstesco_encargado = "",
-                prioridad_encargado = 0,
-                fecha_nacimiento_estudiante = Convert.ToDateTime("00/00/2000"),
-                nivel_educativo_estudiante = "",
-                provincia_estudiante = "",
-                canton_estudiante = "",
-                distrito_estudiante = "",
-                ubicacion_exacta_estudiante = "",
-                observaciones_estudiante = puesto_desenpena,
-                relacion_solicitante = "",
-                otro_anote_solicitante = ""
+                id_solicitud = solicitud.id_solicitud,
+                id_persona = padre.id_persona,
             };
 
-            Persona encargado = new Persona
+            SolicitudPersona p5 = new SolicitudPersona()
             {
-                tipo_cedula = tipo_cedula_encargado,
-                numero_cedula = numero_cedula_encargado,
-                tipo_persona = "Encargado",
-                nombre = nombre_encargado,
-                apellido_1 = apellido1_encargado,
-                apellido_2 = apellido2_encargado,
-                telefono_1 = telefono_1_encargado,
-                telefono_2 = telefono_2_encargado,
-                correo_1 = correo_1_encargado,
-                correo_2 = correo_2_encargado,
-                parenstesco_encargado = parentesco_encargado,
-                prioridad_encargado = 1,
-                fecha_nacimiento_estudiante = Convert.ToDateTime("00/00/2000"),
-                nivel_educativo_estudiante = "",
-                provincia_estudiante = "",
-                canton_estudiante = "",
-                distrito_estudiante = "",
-                ubicacion_exacta_estudiante = "",
-                observaciones_estudiante = "",
-                relacion_solicitante = "",
-                otro_anote_solicitante = ""
+                id_solicitud = solicitud.id_solicitud,
+                id_persona = solicitante.id_persona,
             };
-            */
+
+            SolicitudPersona p6 = new SolicitudPersona()
+            {
+                id_solicitud = solicitud.id_solicitud,
+                id_persona = encargado.id_persona,
+            };
+
             if (ModelState.IsValid)
             {
+                _context.Add(p1);
+                _context.Add(p2);
+                _context.Add(p3);
+                _context.Add(p4);
+                _context.Add(p5);
+                _context.Add(p6);
+                _context.Add(solicitud);
+                _context.Add(historial);
+                _context.Add(centroEducativo);
+                _context.Add(estudiante);
+                _context.Add(docente);
+                _context.Add(madre);
+                _context.Add(padre);
+                _context.Add(solicitante);
+                _context.Add(encargado);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Consultar));
+            }
 
-
+            /*
+            if (ModelState.IsValid)
+            {
                 if (solicitud.solicitud_archivo.Count > 0)
                 {
                     foreach (var archivo in solicitud.solicitud_archivo)
@@ -235,7 +166,8 @@ namespace Proyecto_Sadas.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Consultar));
             }
-            return View(solicitud);
+            */
+            return View();
         }
 
 

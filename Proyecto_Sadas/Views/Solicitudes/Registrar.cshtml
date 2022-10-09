@@ -59,7 +59,7 @@
             <h4>Información del estudiante que requiere la asesoría</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
-                <select class="form-select" id="tipo_cedula_estudiante" name="tipo_cedula_estudiante">
+                <select class="form-select" asp-for=estudiante.tipo_cedula id="tipo_cedula_estudiante" name="tipo_cedula_estudiante">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -71,23 +71,23 @@
             </div>
             <div class="form-group">
                 <label>Identificación del estudiante</label>
-                <input type="text" class="form-control" id="numero_cedula_estudiante" name="numero_cedula"/>
+                <input type="text" asp-for=estudiante.id_persona class="form-control" id="numero_cedula_estudiante" name="numero_cedula"/>
             </div>
             <div class="form-group">
                 <label>Nombre del estudiante</label>
-                <input type="text" class="form-control" id="nombre_estudiante" />
+                <input type="text" asp-for=estudiante.nombre class="form-control" id="nombre_estudiante" />
             </div>
             <div class="form-group">
                 <label>Primer apellido del estudiante</label>
-                <input type="text" class="form-control" id="apellido_1_estudiante"/>
+                <input type="text" asp-for=estudiante.apellido_1 class="form-control" id="apellido_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del estudiante</label>
-                <input type="text" class="form-control" id="apellido_2_estudiante"/>
+                <input type="text" asp-for=estudiante.apellido_2 class="form-control" id="apellido_2_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha de nacimiento: </label>
-                <input type="date" class="form-control" id="fecha_nacimiento_estudiante"/>
+                <input type="date" class="form-control" asp-for=estudiante.fecha_nacimiento_estudiante id="fecha_nacimiento_estudiante"/>
                 <span class="text-danger"></span>
             </div>
             <div>
@@ -96,54 +96,55 @@
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1 del estudiante</label>
-                <input type="tel" class="form-control" id="telefono_1_estudiante"/>
+                <input type="tel" class="form-control" asp-for=estudiante.telefono_1 id="telefono_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2 del estudiante</label>
-                <input type="tel" class="form-control" id="telefono_2_estudiante"/>
+                <input type="tel" class="form-control" asp-for=estudiante.telefono_2 id="telefono_2_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" id="correo_1_estudiante"/>
+                <input type="email" class="form-control" asp-for=estudiante.correo_1 id="correo_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" id="correo_2_estudiante"/>
+                <input type="email" class="form-control" asp-for=estudiante.correo_2 id="correo_2_estudiante"/>
             </div>
-            <div>
-                <label class="form-label mt-4">Ubicación</label>
+            <div class="form-group">
                 <div>
-                    <label for="">Provincias</label>
-                    <select id="slt-provincias">
-                        <option value="">-- Seleccione una provincia --</option>
+                    <label class="form-label mt-4" for="">Provincias</label>
+                    <select class="form-select" id="slt-provincias" asp-for=estudiante.provincia_estudiante>
+                        <option value="">Seleccione una provincia</option>
                     </select>
                 </div>
                 <div>
-                    <label for="">Cantones</label>
-                    <select id="slt-cantones">
-                        <option value="">-- Seleccione un cantón --</option>
+                    <label class="form-label mt-4" for="">Cantones</label>
+                    <select class="form-select" id="slt-cantones" asp-for=estudiante.canton_estudiante>
+                        <option value="">Seleccione un cantón</option>
                 </select>
                 </div>
                 <div>
-                    <label for="">Distritos</label>
-                    <select id="slt-distritos">
-                        <option value="">-- Seleccione un distrito --</option>
+                    <label class="form-label mt-4"  for="">Distritos</label>
+                    <select class="form-select" id="slt-distritos" asp-for=estudiante.distrito_estudiante>
+                        <option value="">Seleccione un distrito</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Lugar de residencia</label>
-                <input type="text" class="form-control" name="ubicacion_exacta_estudiante" />
+                <input type="text" class="form-control" name="ubicacion_exacta_estudiante" asp-for=estudiante.ubicacion_exacta_estudiante/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Descripción de la condición de la persona estudiante</label>
-                <textarea class="form-control" id="descripcion_condicion" name="observaciones_estudiante" rows="4"></textarea>
+                <textarea class="form-control" id="descripcion_condicion" name="observaciones_estudiante" asp-for=estudiante.observaciones_estudiante rows="4"></textarea>
             </div>
             
+            <br />
+            <h4>Información de la madre de la persona estudiante</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
                 
-                <select class="form-select" id="tipo_cedula_madre" name="tipo_cedula_madre">
+                <select class="form-select" asp-for=madre.tipo_cedula id="tipo_cedula" name="numero_cedula_madre">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -155,42 +156,42 @@
             </div>
             <div class="form-group">
                 <label>Identificación de la madre</label>
-                <input type="text" class="form-control" name="numero_cedula_madre" />
+                <input type="text" asp-for=madre.numero_cedula class="form-control" name="tipo_cedula_madre" />
             </div>
             <div class="form-group">
                 <label>Nombre de la madre</label>
-                <input type="text" class="form-control" name="nombre_madre"/>
+                <input type="text" asp-for=madre.nombre class="form-control" name="nombre_madre"/>
             </div>
             <div class="form-group">
                 <label>Primer apellido de la madre</label>
-                <input type="text" class="form-control" name="apellido_1_madre"/>
+                <input type="text" asp-for=madre.apellido_1 class="form-control" name="apellido_1_madre"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido de la madre</label>
-                <input type="text" class="form-control" name="apellido_2_madre"/>
+                <input type="text" asp-for=madre.apellido_2 class="form-control" name="apellido_2_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_madre"/>
+                <input type="tel" asp-for=madre.telefono_1 class="form-control" name="telefono_1_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_madre"/>
+                <input type="tel" asp-for=madre.telefono_2 class="form-control" name="telefono_2_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 1</label>
-                <input type="email" class="form-control" name="correo_1_madre"/>
+                <input type="email" asp-for=madre.correo_1 class="form-control" name="correo_1_madre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 2</label>
-                <input type="email" class="form-control" name="correo_2_madre"/>
+                <input type="email" asp-for=madre.correo_2 class="form-control" name="correo_2_madre"/>
             </div>
             
-          
+            <br />
+            <h4>Información del padrel de la persona estudiante</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
-                <input class="form-control" />
-                <select class="form-select" id="tipo_cedula" name="tipo_cedula_padre">
+                <select class="form-select" asp-for=padre.tipo_cedula id="tipo_cedula" name="tipo_cedula_padre">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -202,42 +203,44 @@
             </div> 
             <div class="form-group">
                 <label>Identificación del padre</label>
-                <input type="text" class="form-control" name="numero_cedula_padre"/>
+                <input type="text" asp-for=padre.numero_cedula class="form-control" name="numero_cedula_padre"/>
             </div>
             <div class="form-group">
                 <label>Nombre del padre</label>
-                <input type="text" class="form-control" name="nombre_padre"/>
+                <input type="text" asp-for=padre.nombre class="form-control" name="nombre_padre"/>
             </div>
             
             <div class="form-group">
                 <label>Primer apellido del padre</label>
-                <input type="text" class="form-control" name="apellido_1_padre"/>
+                <input type="text" asp-for=padre.apellido_1 class="form-control" name="apellido_1_padre"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del padre</label>
-                <input type="text" class="form-control" name="apellido_2_padre"/>
+                <input type="text" asp-for=padre.apellido_2 class="form-control" name="apellido_2_padre"/>
             </div>
              <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_padre"/>
+                <input type="tel" asp-for=padre.telefono_1 class="form-control" name="telefono_1_padre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_padre"/>
+                <input type="tel" asp-for=padre.telefono_2 class="form-control" name="telefono_2_padre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_padre"/>
+                <input type="email" asp-for=padre.correo_1 class="form-control" name="correo_1_padre"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_padre"/>
+                <input type="email" asp-for=padre.correo_2 class="form-control" name="correo_2_padre"/>
             </div>
 
+            <br />
+            <h4>Información del encargado legal de la persona estudiante</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
                 
-                <select class="form-select" id="tipo_cedula" name="tipo_cedula_encargado">
+                <select class="form-select" asp-for=encargado.tipo_cedula id="tipo_cedula" name="tipo_cedula_encargado">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -249,45 +252,62 @@
             </div>
             <div class="form-group">
                 <label>Identificación del encargado</label>
-                <input type="text" class="form-control" name="numero_cedula_encargado" />
+                <input type="text" asp-for=encargado.numero_cedula class="form-control" name="numero_cedula_encargado" />
             </div>
             <div class="form-group">
                 <label>Nombre del encargado</label>
-                <input type="text" class="form-control" name="nombre_encargado"/>
+                <input type="text" asp-for=encargado.nombre class="form-control" name="nombre_encargado"/>
             </div>
             <div class="form-group">
                 <label>Primer apellido del encargado</label>
-                <input type="text" class="form-control" name="apellido_1_encargado"/>
+                <input type="text" asp-for=encargado.apellido_1 class="form-control" name="apellido_1_encargado"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del encargado</label>
-                <input type="text" class="form-control" name="apellido_2_encargado"/>
+                <input type="text" asp-for=encargado.apellido_2 class="form-control" name="apellido_2_encargado"/>
             </div>
             <div class="form-group">
                 <label>Parentesco</label>
-                <input type="text" class="form-control" name="parentesco"/>
+                <input type="text" asp-for=encargado.parenstesco_encargado class="form-control" name="parentesco"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_encargado"/>
+                <input type="tel" asp-for=encargado.telefono_1 class="form-control" name="telefono_1_encargado"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_encargado"/>
+                <input type="tel" asp-for=encargado.telefono_2 class="form-control" name="telefono_2_encargado"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_encargado"/>
+                <input type="email" asp-for=encargado.correo_1 class="form-control" name="correo_1_encargado"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_encargado"/>
+                <input type="email" asp-for=encargado.correo_2 class="form-control" name="correo_2_encargado"/>
             </div>
-
+            <br />
             <h4>Información del centro educativo que asiste la persona estudiante</h4>
             <div class="form-group">
                 <label>Nivel educativo que cursa</label>
-                <input type="text" class="form-control" name="nivel_educativo_estudiante"/>
+                <select class="form-select" asp-for=estudiante.nivel_educativo_estudiante id="tipo_cedula" name="tipo_cedula_encargado">
+                    <option selected="selected" disabled="true">Seleccione una opción</option>
+                    <option>Ciclo de Materno Infantil</option>
+                    <option>Ciclo de Transición</option>
+                    <option>Primer grado</option>
+                    <option>Segundo grado</option>
+                    <option>Tercer grado</option>
+                    <option>Cuarto grado</option>
+                    <option>Quinto grado</option>
+                    <option>Sexto grado</option>
+                    <option>Séptimo grado</option>
+                    <option>Octavo grado</option>
+                    <option>Noveno grado</option>
+                    <option>Décimo grado</option>
+                    <option>Undécimo grado</option>
+                    <option>Duodécimo grado</option>
+                    <option>Otro</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>Nombre del centro educativo</label>
@@ -310,13 +330,24 @@
                 <input asp-for=centro_Educativo.correo_2 type="email" class="form-control" name="correo_2_encargado"/>
             </div>
             <div class="form-group">
-                <label>Ubicación del centro educativo</label>
-                <label>Provincia</label>
-                <input type="text" asp-for="centro_Educativo.provincia" class="form-control" name="provincia_centro_educativo"/>
-                <label>Cantón</label>
-                <input type="text" asp-for="centro_Educativo.canton" class="form-control" name="canton_centro_educativo"/>
-                <label>Distrito</label>
-                <input type="text" asp-for="centro_Educativo.distrito" class="form-control" name="distrito_centro_educativo"/>
+                <div>
+                    <label class="form-label mt-4" for="">Provincias</label>
+                    <select class="form-select" id="slt-provincias" asp-for=centro_Educativo.provincia>
+                        <option value="">Seleccione una provincia</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label mt-4" for="">Cantones</label>
+                    <select class="form-select" id="slt-cantones" asp-for=centro_Educativo.canton>
+                        <option value="">Seleccione un cantón</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label mt-4" for="">Distritos</label>
+                    <select class="form-select" id="slt-distritos" asp-for=centro_Educativo.distrito>
+                        <option value="">Seleccione un distrito</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Ubicación exacta del centro educativo</label>
@@ -338,7 +369,7 @@
                 <label>Nombre completo de la persona a cargo de la Dirección</label>
                 <input type="text" class="form-control" asp-for="centro_Educativo.encargado" name="encargado_centro_educativo"/>
             </div>
-
+            <br />
             <h4>Información del docente a cargo</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>                
@@ -360,7 +391,7 @@
                 <label>Nombre del docente a cargo</label>
                 <input type="text" class="form-control" name="nombre_docente" />
             </div>
-        
+            
             <div class="form-group">
                 <label>Primer apellido del docente a cargo</label>
                 <input type="text" class="form-control" name="apellido1_docente" />
@@ -385,12 +416,11 @@
                 <label class="form-label mt-4">Correo eléctronico</label>
                 <input type="email" class="form-control" name="correo_2_docente"/>
             </div>
-            
+            <br />
             <h4>Información de la persona solicitante</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
-                
-                <select class="form-select" id="tipo_cedula" name="tipo_cedula_solicitante">
+                <select class="form-select" asp-for=solicitante.tipo_cedula id="tipo_cedula" name="tipo_cedula_solicitante">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -402,39 +432,39 @@
             </div>
             <div class="form-group">
                 <label>Identificación de la persona solicitante</label>
-                <input type="text" class="form-control" name="numero_cedula_solicitante"/>
+                <input type="text" asp-for=solicitante.numero_cedula class="form-control" name="numero_cedula_solicitante"/>
             </div>
             <div class="form-group">
                 <label>Nombre del solicitante</label>
-                <input type="text" class="form-control" name="nombre_solicitante"/>
+                <input type="text" asp-for=solicitante.nombre class="form-control" name="nombre_solicitante"/>
             </div>
             <div class="form-group">
                 <label>Primer apellido del solicitante</label>
-                <input type="text" class="form-control" name="apellido_1_solicitante"/>
+                <input type="text" asp-for=solicitante.apellido_1 class="form-control" name="apellido_1_solicitante"/>
             </div>
             <div class="form-group">
                 <label>Segundo apellido del solicitante</label>
-                <input type="text" class="form-control" name="apellido_2_solicitante"/>
+                <input type="text" asp-for=solicitante.apellido_2 class="form-control" name="apellido_2_solicitante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                <input type="tel" class="form-control" name="telefono_1_solicitante">
+                <input type="tel" asp-for=solicitante.telefono_1 class="form-control" name="telefono_1_solicitante">
             </div>
             <div class="form-group">
-                <label class="form-label mt-4">Teléfono #2</label>
-                <input type="tel" class="form-control" name="telefono_2_solicitante">
+                <label class="form-label mt-4">Teléfono #1</label>
+                <input type="tel" asp-for=solicitante.telefono_2 class="form-control" name="telefono_1_solicitante">
             </div>
             <div class="form-group">
-                <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_1_solicitante"/>
+                <label class="form-label mt-4">Correo Electrónico #1</label>
+                <input type="tel" asp-for=solicitante.correo_1 class="form-control" name="telefono_2_solicitante">
             </div>
             <div class="form-group">
-                <label class="form-label mt-4">Correo eléctronico</label>
-                <input type="email" class="form-control" name="correo_2_solicitante"/>
+                <label class="form-label mt-4">Correo eléctronico #2</label>
+                <input type="email" asp-for=solicitante.correo_2 class="form-control" name="correo_1_solicitante"/>
             </div>
             <div class="form-group">
                 <label for="puesto_desenpena" class="form-label mt-4">Puesto que desenpeña</label>
-                <select class="form-select" id="puesto_desenpena" name="puesto_desenpena">
+                <select class="form-select" asp-for=solicitante.relacion_solicitante id="puesto_desenpena" name="puesto_desenpena">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Docente Regular</option>
                     <option>Padre o Madre Familia</option>
@@ -550,12 +580,12 @@
                 <label>Mencione el producto de apoyo solicitado</label>
                 @Html.TextBoxFor(model => model.historial.producto_apoyo_no_gubernamental_descripcion, new { @class = "form-control" })
             </div>
-            <div class="form-group row">
-                <label asp-for="solicitud_archivo" class="col-sm-2 col-form-label">Archivos Adjuntos</label>
-                <div class="mb-3">
-                    <label asp-for="solicitud_archivo" for="formFileMultiple" class="form-label">Archivos adjuntos a la Solicitud</label>
-                    <input asp-for="solicitud_archivo" class="form-control" type="file" id="formFileMultiple" multiple/>
-                </div>
+            <div>
+                <section id="multi-selector-uniq">
+                    <input class="form-control" id="files" type="file" multiple>
+                    <ul class="list-group-item list-group-item-action" id="preview"></ul>
+                    <script src="~/js/agregar-archivos.js"></script>
+                </section>
             </div>
             <div class="form-group">
                 <input type="submit" value="Registrar" class="btn btn-primary" />
