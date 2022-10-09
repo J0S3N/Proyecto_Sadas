@@ -111,6 +111,7 @@
                 <input type="email" class="form-control" id="correo_2_estudiante"/>
             </div>
             <div>
+                <label class="form-label mt-4">Ubicación</label>
                 <div>
                     <label for="">Provincias</label>
                     <select id="slt-provincias">
@@ -142,7 +143,7 @@
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
                 
-                <select class="form-select" id="tipo_cedula" name="numero_cedula_madre">
+                <select class="form-select" id="tipo_cedula_madre" name="tipo_cedula_madre">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -154,7 +155,7 @@
             </div>
             <div class="form-group">
                 <label>Identificación de la madre</label>
-                <input type="text" class="form-control" name="tipo_cedula_madre" />
+                <input type="text" class="form-control" name="numero_cedula_madre" />
             </div>
             <div class="form-group">
                 <label>Nombre de la madre</label>
@@ -359,7 +360,7 @@
                 <label>Nombre del docente a cargo</label>
                 <input type="text" class="form-control" name="nombre_docente" />
             </div>
-            
+        
             <div class="form-group">
                 <label>Primer apellido del docente a cargo</label>
                 <input type="text" class="form-control" name="apellido1_docente" />

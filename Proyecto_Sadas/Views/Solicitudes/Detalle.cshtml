@@ -10,6 +10,12 @@
     <h4>Solicitud</h4>
     <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.id_solicitud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.id_solicitud)
+        </dd>     
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.fecha_realiza)
         </dt>
@@ -22,6 +28,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.fecha_recibe)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.metodo_envio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.metodo_envio)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.sede_recibe)
         </dt>
@@ -33,13 +45,501 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.nombre_persona_recibe)
-        </dd>
+        </dd>     
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.metodo_envio)
+            @Html.DisplayNameFor(model => model.estudiante.tipo_cedula)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.metodo_envio)
+            @Html.DisplayFor(model => model.estudiante.tipo_cedula)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.numero_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.numero_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.apellido_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.apellido_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.apellido_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.apellido_2)
+        </dd>
+        <!-- edad
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.estudiante.fecha_nacimiento_estudiante)
+        </dt>
+         <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.estudiante.fecha_nacimiento_estudiante)
+        </dd>
+        -->
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.fecha_nacimiento_estudiante)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.fecha_nacimiento_estudiante)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.telefono_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.telefono_1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.telefono_2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.telefono_2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.correo_1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.correo_1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.correo_2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.correo_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.provincia_estudiante)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.provincia_estudiante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.canton_estudiante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.canton_estudiante)
+        </dd>     
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.distrito_estudiante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.distrito_estudiante)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.ubicacion_exacta_estudiante)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.ubicacion_exacta_estudiante)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descripcion_condicion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripcion_condicion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.tipo_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.tipo_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.numero_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.numero_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.apellido_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.apellido_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.apellido_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.apellido_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.telefono_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.telefono_1)
+        </dd>       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.telefono_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.telefono_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.correo_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.correo_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.madre.correo_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.madre.correo_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.tipo_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.tipo_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.numero_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.numero_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.apellido_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.apellido_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.apellido_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.apellido_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.telefono_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.telefono_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.telefono_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.telefono_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.correo_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.correo_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.padre.correo_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.padre.correo_2)
+        </dd>
+        
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.tipo_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.tipo_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.numero_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.numero_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.apellido_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.apellido_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.apellido_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.apellido_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.parenstesco_encargado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.parenstesco_encargado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.telefono_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.telefono_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.telefono_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.telefono_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.correo_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.correo_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.encargado.correo_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.encargado.correo_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.estudiante.nivel_educativo_estudiante)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.estudiante.nivel_educativo_estudiante)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.telefono_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.telefono_1)
+        </dd>      
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.telefono_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.telefono_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.correo_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.correo_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.correo_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.correo_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.provincia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.provincia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.canton)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.canton)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.distrito)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.distrito)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.ubicacion_exacta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.ubicacion_exacta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.dependencia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.dependencia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.region_educativa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.region_educativa)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.circuito)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.circuito)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.centro_Educativo.encargado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.centro_Educativo.encargado)
+        </dd> 
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.tipo_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.tipo_cedula)
+        </dd> 
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.numero_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.numero_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.apellido_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.apellido_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.apellido_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.apellido_2)
+        </dd> 
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.apellido_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.apellido_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.apellido_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.apellido_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.telefono_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.telefono_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.telefono_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.telefono_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.correo_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.correo_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.docente.correo_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.docente.correo_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.tipo_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.tipo_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.numero_cedula)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.numero_cedula)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.apellido_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.apellido_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.apellido_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.apellido_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.telefono_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.telefono_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.telefono_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.telefono_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.correo_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.correo_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.correo_2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.correo_2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.solicitante.relacion_solicitante)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.solicitante.relacion_solicitante)
+        </dd>
+        <!-- motivo
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.apoyo_organizativo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.apoyo_organizativo)
+        </dd>
+        -->
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.apoyo_organizativo)
         </dt>
@@ -57,7 +557,7 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.servicio_apoyo_empleados)
-        </dd>
+        </dd>  
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.servicio_apoyo_recibe)
         </dt>
@@ -69,34 +569,74 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.servicio_apoyo_recibe_region_educativa)
-        </dd>
+        </dd>     
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.apoyo_educativo_requerido)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.apoyo_educativo_requerido)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.descripcion_condicion)
+        </dd>  
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.asesoria_previa)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.descripcion_condicion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.id_centro_Educativo)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.asesoria_previa)
+        </dd> 
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.sede_asesoria_previa)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.id_centro_Educativo)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.sede_asesoria_previa)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.id_historial)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.adjunta_certificacion_medica_CCSS)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.id_historial)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.adjunta_certificacion_medica_CCSS)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.adjunta_certificacion_medica_CONAPDIS)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.adjunta_certificacion_medica_CONAPDIS)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.producto_apoyo_gubernamental)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.producto_apoyo_gubernamental)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.producto_apoyo_gubernamental_descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.producto_apoyo_gubernamental_descripcion)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.producto_apoyo_no_gubernamental)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.producto_apoyo_no_gubernamental)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.producto_apoyo_no_gubernamental_descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.producto_apoyo_no_gubernamental_descripcion)
+        </dd>
+        
+        <!-- archivo
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.historial.producto_apoyo_no_gubernamental)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.historial.producto_apoyo_no_gubernamental)
+        </dd>
+        -->
     </dl>
 </div>
 <div>
     <a asp-action="Modificar" asp-route-id="@Model?.id_solicitud">Modificar</a> |
-    <a asp-action="Consultar">Volver</a>
+    <a asp-action="Consultar">Consultar</a>
 </div>
