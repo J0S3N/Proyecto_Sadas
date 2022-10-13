@@ -42,14 +42,19 @@ namespace Proyecto_Sadas.Models
 
         [NotMapped]
         public Persona docente { get; set; } = default!;
+        
         [NotMapped]
         public Persona estudiante { get; set; } = default!;
+        
         [NotMapped]
         public Persona solicitante { get; set; } = default!;
+        
         [NotMapped]
         public Persona madre { get; set; } = default!;
+        
         [NotMapped]
         public Persona padre { get; set; } = default!;
+        
         [NotMapped]
         public Persona encargado { get; set; } = default!;
     }

@@ -14,21 +14,21 @@
             <h4>Información de la solicitud</h4>
             <div class="form-group">
                 <label asp-for="id_solicitud" class="control-label">Código de solicitud </label>
-                <input type="text" name="inputname" disabled>
+                <input type="text" name="inputname" class="form-control" disabled>
             </div>
             <div class="form-group">
                 <label asp-for="fecha_realiza" class="control-label">Fecha de la solicitud: </label>
-                <input type="date" asp-for="fecha_realiza" class="form-control" />
+                <input type="date" asp-for="fecha_realiza" class="form-control" name="fecha_realiza" />
                 <span asp-validation-for="fecha_realiza" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="fecha_recibe" class="control-label">Fecha que se recibe la solicitud: </label>
-                <input type="date" asp-for="fecha_recibe" class="form-control" />
+                <input type="date" asp-for="fecha_recibe" class="form-control" name="fecha_recibe" />
                 <span asp-validation-for="fecha_recibe" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="metodo_envio" class="control-label">Método de envío</label>
-                <select asp-for="metodo_envio" class="form-select" id="metodo_envio">
+                <select asp-for="metodo_envio" class="form-select" name="metodo_envio">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Documento Físico</option>
                     <option>Fax</option>
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="sede_recibe" class="control-label">Sede donde se recibió la solicitud</label>
-                <select asp-for="sede_recibe" class="form-select" id="sede_recibe">
+                <select asp-for="sede_recibe" class="form-select" name="sede_recibe">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Limón</option>
                     <option>San Carlos</option>
@@ -50,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="nombre_persona_recibe" class="control-label">Nombre de la persona que recibe la solicitud</label>
-                <input asp-for="nombre_persona_recibe" class="form-control" />
+                <input asp-for="nombre_persona_recibe" class="form-control" name="nombre_persona_recibe" />
                 <span asp-validation-for="nombre_persona_recibe" class="text-danger"></span>
             </div>
 
@@ -59,7 +59,7 @@
             <h4>Información del estudiante que requiere la asesoría</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
-                <select class="form-select" asp-for=estudiante.tipo_cedula id="tipo_cedula_estudiante" name="tipo_cedula_estudiante">
+                <select class="form-select" asp-for=estudiante.tipo_cedula name="tipo_cedula_estudiante">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
                     <option>Cédula de Residencia</option>
@@ -71,61 +71,61 @@
             </div>
             <div class="form-group">
                 <label>Identificación del estudiante</label>
-                <input type="text" asp-for=estudiante.id_persona class="form-control" id="numero_cedula_estudiante" name="numero_cedula"/>
+                <input type="text" asp-for=estudiante.id_persona class="form-control" name="numero_cedula_estudiante"/>
             </div>
             <div class="form-group">
                 <label>Nombre del estudiante</label>
-                <input type="text" asp-for=estudiante.nombre class="form-control" id="nombre_estudiante" />
+                <input type="text" asp-for=estudiante.nombre class="form-control" name="nombre_estudiante" />
             </div>
             <div class="form-group">
                 <label>Primer apellido del estudiante</label>
-                <input type="text" asp-for=estudiante.apellido_1 class="form-control" id="apellido_1_estudiante"/>
+                <input type="text" asp-for=estudiante.apellido_1 class="form-control" name="apellido_1_estudiante" />
             </div>
             <div class="form-group">
                 <label>Segundo apellido del estudiante</label>
-                <input type="text" asp-for=estudiante.apellido_2 class="form-control" id="apellido_2_estudiante"/>
+                <input type="text" asp-for=estudiante.apellido_2 class="form-control" name="apellido_2_estudiante" />
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha de nacimiento: </label>
-                <input type="date" class="form-control" asp-for=estudiante.fecha_nacimiento_estudiante id="fecha_nacimiento_estudiante"/>
+                <input type="date" class="form-control" asp-for=estudiante.fecha_nacimiento_estudiante name="fecha_nacimiento_estudiante"/>
                 <span class="text-danger"></span>
             </div>
             <div>
                 <label class="control-label">Edad</label>
-                <input type="text" name="inputname" value="edad" disabled>
+                <input type="text" name="inputname" value="edad" class="form-control" disabled>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1 del estudiante</label>
-                <input type="tel" class="form-control" asp-for=estudiante.telefono_1 id="telefono_1_estudiante"/>
+                <input type="tel" class="form-control" asp-for=estudiante.telefono_1 name="telefono_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2 del estudiante</label>
-                <input type="tel" class="form-control" asp-for=estudiante.telefono_2 id="telefono_2_estudiante"/>
+                <input type="tel" class="form-control" asp-for=estudiante.telefono_2 name="telefono_2_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" asp-for=estudiante.correo_1 id="correo_1_estudiante"/>
+                <input type="email" class="form-control" asp-for=estudiante.correo_1 name="correo_1_estudiante"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico del estudiante</label>
-                <input type="email" class="form-control" asp-for=estudiante.correo_2 id="correo_2_estudiante"/>
+                <input type="email" class="form-control" asp-for=estudiante.correo_2 name="correo_2_estudiante"/>
             </div>
             <div class="form-group">
                 <div>
                     <label class="form-label mt-4" for="">Provincias</label>
-                    <select class="form-select" id="slt-provincias" asp-for=estudiante.provincia_estudiante>
+                    <select class="form-select" id="slt-provincias" asp-for=estudiante.provincia_estudiante name="provincia_estudiante">
                         <option value="">Seleccione una provincia</option>
                     </select>
                 </div>
                 <div>
                     <label class="form-label mt-4" for="">Cantones</label>
-                    <select class="form-select" id="slt-cantones" asp-for=estudiante.canton_estudiante>
+                    <select class="form-select" id="slt-cantones" asp-for=estudiante.canton_estudiante name="canton_estudiante">
                         <option value="">Seleccione un cantón</option>
                 </select>
                 </div>
                 <div>
                     <label class="form-label mt-4"  for="">Distritos</label>
-                    <select class="form-select" id="slt-distritos" asp-for=estudiante.distrito_estudiante>
+                    <select class="form-select" id="slt-distritos" asp-for=estudiante.distrito_estudiante name="distrito_estudiante">
                         <option value="">Seleccione un distrito</option>
                     </select>
                 </div>
@@ -136,14 +136,13 @@
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Descripción de la condición de la persona estudiante</label>
-                <textarea class="form-control" id="descripcion_condicion" name="observaciones_estudiante" asp-for=estudiante.observaciones_estudiante rows="4"></textarea>
+                <textarea class="form-control" name="observaciones_estudiante" asp-for=estudiante.observaciones_estudiante rows="4"></textarea>
             </div>
             
             <br />
             <h4>Información de la madre de la persona estudiante</h4>
             <div class="form-group">
                 <label class="control-label">Tipo de identificación</label>
-                
                 <select class="form-select" asp-for=madre.tipo_cedula id="tipo_cedula" name="numero_cedula_madre">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Cédula Nacional</option>
@@ -216,7 +215,7 @@
             </div>
             <div class="form-group">
                 <label>Segundo apellido del padre</label>
-                <input type="text" asp-for=padre.apellido_2 class="form-control" name="apellido_2_padre"/>
+                <input type="text" asp-for=padre.apellido_1 class="form-control" name="apellido_2_padre"/>
             </div>
              <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
@@ -268,7 +267,7 @@
             </div>
             <div class="form-group">
                 <label>Parentesco</label>
-                <input type="text" asp-for=encargado.parenstesco_encargado class="form-control" name="parentesco"/>
+                <input type="text" asp-for=encargado.parenstesco_encargado class="form-control" name="parentesco_encargardo" />
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
@@ -290,7 +289,7 @@
             <h4>Información del centro educativo que asiste la persona estudiante</h4>
             <div class="form-group">
                 <label>Nivel educativo que cursa</label>
-                <select class="form-select" asp-for=estudiante.nivel_educativo_estudiante id="tipo_cedula" name="tipo_cedula_encargado">
+                <select class="form-select" asp-for=estudiante.nivel_educativo_estudiante id="tipo_cedula" name="nivel_educativo_estudiante">
                     <option selected="selected" disabled="true">Seleccione una opción</option>
                     <option>Ciclo de Materno Infantil</option>
                     <option>Ciclo de Transición</option>
@@ -311,47 +310,41 @@
             </div>
             <div class="form-group">
                 <label>Nombre del centro educativo</label>
-                @Html.TextBoxFor(model => model.centro_Educativo.nombre, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.centro_Educativo.nombre, new { @class = "form-control", name="nombre_centro_educativo"})
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #1</label>
-                @Html.TextBoxFor(model => model.centro_Educativo.telefono_1, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.centro_Educativo.telefono_1, new { @class = "form-control", name ="telefono_1_centro_educativo" })
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Teléfono #2</label>
-                @Html.TextBoxFor(model => model.centro_Educativo.telefono_2, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.centro_Educativo.telefono_2, new { @class = "form-control", name ="telefono_2_centro_educativo" })
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 1</label>
-                <input asp-for=centro_Educativo.correo_1 type="email" class="form-control" name="correo_2_encargado"/>
+                <input asp-for=centro_Educativo.correo_1 type="email" class="form-control" name="correo_1_centro_educativo"/>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico # 2</label>
-                <input asp-for=centro_Educativo.correo_2 type="email" class="form-control" name="correo_2_encargado"/>
+                <input asp-for=centro_Educativo.correo_2 type="email" class="form-control" name="correo_2_centro_educativo"/>
             </div>
             <div class="form-group">
                 <div>
                     <label class="form-label mt-4" for="">Provincias</label>
-                    <select class="form-select" id="slt-provincias" asp-for=centro_Educativo.provincia>
-                        <option value="">Seleccione una provincia</option>
-                    </select>
+                    <input asp-for=centro_Educativo.provincia type="text" class="form-control" name="provincia_centro_educativo" />
                 </div>
                 <div>
                     <label class="form-label mt-4" for="">Cantones</label>
-                    <select class="form-select" id="slt-cantones" asp-for=centro_Educativo.canton>
-                        <option value="">Seleccione un cantón</option>
-                    </select>
+                    <input asp-for=centro_Educativo.canton type="text" class="form-control" name="canton_centro_educativo"/>
                 </div>
                 <div>
                     <label class="form-label mt-4" for="">Distritos</label>
-                    <select class="form-select" id="slt-distritos" asp-for=centro_Educativo.distrito>
-                        <option value="">Seleccione un distrito</option>
-                    </select>
+                    <input asp-for=centro_Educativo.distrito type="text" class="form-control" name="distrito_centro_educativo"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Ubicación exacta del centro educativo</label>
-                <textarea class="form-control" asp-for="centro_Educativo.ubicacion_exacta" id="ubicacion_exacta" rows="4" name="ubicacion_exacta"></textarea>
+                <textarea class="form-control" asp-for="centro_Educativo.ubicacion_exacta" name="ubicacion_exacta_centro_educativo" rows="4" name="ubicacion_exacta"></textarea>
             </div>
             <div class="form-group">
                 <label>Dependencia</label>
@@ -359,7 +352,7 @@
             </div>
             <div class="form-group">
                 <label>Región Educativa</label>
-                <input type="text" class="form-control" asp-for="centro_Educativo.region_educativa" name="region_educativo"/>
+                <input type="text" class="form-control" asp-for="centro_Educativo.region_educativa" name="region_educativa" />
             </div>
             <div class="form-group">
                 <label>Circuito</label>
@@ -367,7 +360,7 @@
             </div>
             <div class="form-group">
                 <label>Nombre completo de la persona a cargo de la Dirección</label>
-                <input type="text" class="form-control" asp-for="centro_Educativo.encargado" name="encargado_centro_educativo"/>
+                <input type="text" class="form-control" asp-for="centro_Educativo.encargado" name="encargado"/>
             </div>
             <br />
             <h4>Información del docente a cargo</h4>
@@ -456,7 +449,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo Electrónico #1</label>
-                <input type="tel" asp-for=solicitante.correo_1 class="form-control" name="telefono_2_solicitante">
+                <input type="email" asp-for=solicitante.correo_1 class="form-control" name="telefono_2_solicitante">
             </div>
             <div class="form-group">
                 <label class="form-label mt-4">Correo eléctronico #2</label>
@@ -464,7 +457,7 @@
             </div>
             <div class="form-group">
                 <label for="puesto_desenpena" class="form-label mt-4">Puesto que desenpeña</label>
-                <select class="form-select" asp-for=solicitante.relacion_solicitante id="puesto_desenpena" name="puesto_desenpena">
+                <select class="form-select" asp-for=solicitante.relacion_solicitante name="relacion_solicitante">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Docente Regular</option>
                     <option>Padre o Madre Familia</option>
@@ -483,33 +476,33 @@
             </div>
             <div class="form-group">
                 <label asp-for="apoyo_organizativo" class="control-label">Apoyo Organizativo</label>
-                <input asp-for="apoyo_organizativo" class="form-control" />
+                <input asp-for="apoyo_organizativo" class="form-control" name="apoyo_organizativo"/>
                 <span asp-validation-for="apoyo_organizativo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="producto_apoyo_organizativo" class="control-label">Producto de apoyo empleados</label>
-                <input asp-for="producto_apoyo_organizativo" class="form-control" />
+                <input asp-for="producto_apoyo_organizativo" class="form-control" name="producto_apoyo_organizativo"/>
                 <span asp-for="producto_apoyo_organizativo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="servicio_apoyo_empleados" class="control-label">Servicio de apoyo empleados</label>
-                <input asp-for="servicio_apoyo_empleados" class="form-control" />
+                <input asp-for="servicio_apoyo_empleados" class="form-control" name="servicio_apoyo_empleados"/>
                 <span asp-validation-for="servicio_apoyo_empleados" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="servicio_apoyo_recibe" class="control-label">Servicio de apoyo que recibe</label>
-                <input asp-for="servicio_apoyo_recibe" class="form-control" />
+                <input asp-for="servicio_apoyo_recibe" class="form-control" name="servicio_apoyo_recibe"/>
                 <span asp-validation-for="servicio_apoyo_recibe" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="servicio_apoyo_recibe_region_educativa" class="control-label">Servicio apoyo recibe region educativa</label>
-                <input asp-for="servicio_apoyo_recibe_region_educativa" class="form-control" />
+                <input asp-for="servicio_apoyo_recibe_region_educativa" class="form-control" name="servicio_apoyo_recibe_region_educativa"/>
                 <span asp-validation-for="servicio_apoyo_recibe_region_educativa" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="apoyo_educativo_requerido" class="control-label">Apoyo requerido</label>
-                <input asp-for="apoyo_educativo_requerido" class="form-control" />
+                <input asp-for="apoyo_educativo_requerido" class="form-control" name="apoyo_educativo_requerido"/>
                 <span asp-validation-for="apoyo_educativo_requerido" class="text-danger"></span>
             </div>
             
@@ -518,15 +511,15 @@
                 @Html.Label("","¿Tuvo asesoría del Cenarec anteriormente?",new { @class = "control-label" })
                 <br />
                 @Html.Label("Sí:")
-                @Html.RadioButtonFor(h => h.historial.asesoria_previa, 1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                @Html.RadioButtonFor(h => h.historial.asesoria_previa, 1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked", @name="asesoria_previa"})
                 
                 @Html.Label("No:")
-                @Html.RadioButtonFor(h => h.historial.asesoria_previa, 0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
+                @Html.RadioButtonFor(h => h.historial.asesoria_previa, 0, new {@id="flexRadioDefault1", @class = "form-check-input", @name="asesoria_previa"}) 
             </div>
             <div class="form-group">
                 <label class="control-label">Sede en donde recibió asesoría anteriormente</label>
                 
-                <select asp-for=historial.sede_asesoria_previa class="form-select" id="tipo_cedula">
+                <select asp-for=historial.sede_asesoria_previa class="form-select" name="sede_asesoria_previa">
                     <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
                     <option>Limón</option>
                     <option>San Carlos</option>
@@ -540,45 +533,45 @@
                 @Html.Label("","¿Adjunta certificación médica emitida por la Caja Costarricences del Seguro Social (CCSS)?",new { @class = "control-label" })
                 <br />
                 @Html.Label("Sí:")
-                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CCSS,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CCSS,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked", @name ="adjunta_certificacion_medica_CCSS"})
                 
                 @Html.Label("No:")
-                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CCSS,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CCSS,0, new {@id="flexRadioDefault1", @class = "form-check-input", @name ="adjunta_certificacion_medica_CCSS"}) 
             </div>
             <div>
                 @Html.Label("","¿Adjunta certificación de discapacidad emitida por el Consejo Nacional de Personas con Discapacidad (CONAPDIS)?",new { @class = "control-label" })
                 <br />
                 @Html.Label("Sí:")
-                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CONAPDIS,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CONAPDIS,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked", @name ="adjunta_certificacion_medica_CONAPDIS"})
                 
                 @Html.Label("No:")
-                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CONAPDIS,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
+                @Html.RadioButtonFor(h => h.historial.adjunta_certificacion_medica_CONAPDIS,0, new {@id="flexRadioDefault1", @class = "form-check-input", @name ="adjunta_certificacion_medica_CONAPDIS"}) 
             </div>
             <div>
                 @Html.Label("","¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?",new { @class = "control-label" })
                 <br />
                 @Html.Label("Sí:")
-                @Html.RadioButtonFor(h => h.historial.producto_apoyo_gubernamental,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_gubernamental,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked", @name="producto_apoyo_gubernamental"})
                 
                 @Html.Label("No:")
-                @Html.RadioButtonFor(h => h.historial.producto_apoyo_gubernamental,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_gubernamental,0, new {@id="flexRadioDefault1", @class = "form-check-input", @name="producto_apoyo_gubernamental"}) 
             </div>
             <div class="form-group">
                 <label>Mencione el producto de apoyo solicitado</label>
-                @Html.TextBoxFor(model => model.historial.producto_apoyo_gubernamental_descripcion, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.historial.producto_apoyo_gubernamental_descripcion, new { @class = "form-control", @name="producto_apoyo_gubernamental_descripcion"})
             </div>
             <div>
                 @Html.Label("","¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?",new { @class = "control-label" })
                 <br />
                 @Html.Label("Sí:")
-                @Html.RadioButtonFor(h => h.historial.producto_apoyo_no_gubernamental,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked"})
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_no_gubernamental,1, new {@id="flexRadioDefault1", @class = "form-check-input", @checked = "checked", @name="producto_apoyo_no_gubernamental"})
                 
                 @Html.Label("No:")
-                @Html.RadioButtonFor(h => h.historial.producto_apoyo_no_gubernamental,0, new {@id="flexRadioDefault1", @class = "form-check-input"}) 
+                @Html.RadioButtonFor(h => h.historial.producto_apoyo_no_gubernamental,0, new {@id="flexRadioDefault1", @class = "form-check-input", @name="producto_apoyo_no_gubernamental"}) 
             </div>
             <div class="form-group">
                 <label>Mencione el producto de apoyo solicitado</label>
-                @Html.TextBoxFor(model => model.historial.producto_apoyo_no_gubernamental_descripcion, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.historial.producto_apoyo_no_gubernamental_descripcion, new { @class = "form-control", @name="producto_apoyo_no_gubernamental_descripcion" })
             </div>
             <div>
                 <section id="multi-selector-uniq">
