@@ -54,6 +54,11 @@ namespace Proyecto_Sadas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Registrar(IFormCollection formCollection)
         {
+
+            //dynamic expando object
+            //falta guardar solicitud...
+            //falta save changes
+
             Solicitud solicitud = new Solicitud()
             {
                 fecha_realiza = Convert.ToDateTime(formCollection["fecha_realiza"]),
@@ -69,6 +74,8 @@ namespace Proyecto_Sadas.Controllers
                 apoyo_educativo_requerido = formCollection["apoyo_educativo_requerido"],
                 descripcion_condicion = formCollection["descripcion_condicion"]
             };
+
+            _context.Add(solicitud);
 
             Persona estudiante = new Persona();
             estudiante.tipo_cedula = formCollection["tipo_cedula_estudiante"];
