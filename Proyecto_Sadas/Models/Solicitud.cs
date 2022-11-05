@@ -16,7 +16,6 @@ namespace Proyecto_Sadas.Models
         public DateTime fecha_recibe { get; set; }
         [Required]
         public string sede_recibe { get; set; }
-        public string nombre_persona_recibe { get; set; }
         [Required]
         public string metodo_envio { get; set; }
         public string apoyo_organizativo { get; set; }
@@ -39,23 +38,5 @@ namespace Proyecto_Sadas.Models
         public IList<SolicitudPersona> solicitud_persona { get; set; } = default!;
         public IList<SolicitudFuncionario> solicitud_funcionario { get; set; } = default!;
         public IList<SolicitudAuditoria> solicitud_auditoria { get; set; } = default!;
-
-        [NotMapped]
-        public Persona docente { get; set; } = default!;
-        
-        [NotMapped]
-        public Persona estudiante { get; set; } = default!;
-        
-        [NotMapped]
-        public Persona solicitante { get; set; } = default!;
-        
-        [NotMapped]
-        public Persona madre { get; set; } = default!;
-        
-        [NotMapped]
-        public Persona padre { get; set; } = default!;
-        
-        [NotMapped]
-        public Persona encargado { get; set; } = default!;
     }
 }

@@ -1,0 +1,69 @@
+﻿@model Proyecto_Sadas.Models.Historial
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Historial</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id_historial" />
+            <div class="form-group">
+                <label asp-for="asesoria_previa" class="control-label"></label>
+                <input asp-for="asesoria_previa" class="form-control" />
+                <span asp-validation-for="asesoria_previa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sede_asesoria_previa" class="control-label"></label>
+                <input asp-for="sede_asesoria_previa" class="form-control" />
+                <span asp-validation-for="sede_asesoria_previa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adjunta_certificacion_medica_CCSS" class="control-label"></label>
+                <input asp-for="adjunta_certificacion_medica_CCSS" class="form-control" />
+                <span asp-validation-for="adjunta_certificacion_medica_CCSS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adjunta_certificacion_medica_CONAPDIS" class="control-label"></label>
+                <input asp-for="adjunta_certificacion_medica_CONAPDIS" class="form-control" />
+                <span asp-validation-for="adjunta_certificacion_medica_CONAPDIS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_gubernamental" class="control-label"></label>
+                <input asp-for="producto_apoyo_gubernamental" class="form-control" />
+                <span asp-validation-for="producto_apoyo_gubernamental" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_gubernamental_descripcion" class="control-label"></label>
+                <input asp-for="producto_apoyo_gubernamental_descripcion" class="form-control" />
+                <span asp-validation-for="producto_apoyo_gubernamental_descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_no_gubernamental" class="control-label"></label>
+                <input asp-for="producto_apoyo_no_gubernamental" class="form-control" />
+                <span asp-validation-for="producto_apoyo_no_gubernamental" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_no_gubernamental_descripcion" class="control-label"></label>
+                <input asp-for="producto_apoyo_no_gubernamental_descripcion" class="form-control" />
+                <span asp-validation-for="producto_apoyo_no_gubernamental_descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

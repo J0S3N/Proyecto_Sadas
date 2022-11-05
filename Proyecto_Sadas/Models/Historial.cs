@@ -16,7 +16,6 @@ namespace Proyecto_Sadas.Models
         public string producto_apoyo_gubernamental_descripcion { get; set; }
         public int producto_apoyo_no_gubernamental { get; set; }
         public string producto_apoyo_no_gubernamental_descripcion { get; set; }
-
         public ICollection<Solicitud> solicitudes { get; set; } = default!;
     }
 }

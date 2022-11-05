@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Proyecto_Sadas.Models.Historial>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.asesoria_previa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sede_asesoria_previa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adjunta_certificacion_medica_CCSS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adjunta_certificacion_medica_CONAPDIS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_apoyo_gubernamental)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_apoyo_gubernamental_descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_apoyo_no_gubernamental)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto_apoyo_no_gubernamental_descripcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.asesoria_previa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sede_asesoria_previa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adjunta_certificacion_medica_CCSS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adjunta_certificacion_medica_CONAPDIS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_apoyo_gubernamental)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_apoyo_gubernamental_descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_apoyo_no_gubernamental)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_apoyo_no_gubernamental_descripcion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_historial">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_historial">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_historial">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

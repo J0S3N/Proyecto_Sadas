@@ -1,97 +1,81 @@
 ﻿@model Proyecto_Sadas.Models.Solicitud
 
 @{
-    ViewData["Title"] = "Modificar";
+    ViewData["Title"] = "Create";
 }
 
-<h1>Modificar</h1>
+<h1>Create</h1>
 
 <h4>Solicitud</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Modificar">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id_solicitud" />
             <div class="form-group">
-                <label asp-for="fecha_realiza" class="control-label"></label>
+                <label asp-for="fecha_realiza" class="control-label">Fecha en que se realiza la solicitud</label>
                 <input asp-for="fecha_realiza" class="form-control" />
                 <span asp-validation-for="fecha_realiza" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="fecha_recibe" class="control-label"></label>
+                <label asp-for="fecha_recibe" class="control-label">Fecha en que se recibe la solicitud</label>
                 <input asp-for="fecha_recibe" class="form-control" />
                 <span asp-validation-for="fecha_recibe" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="sede_recibe" class="control-label"></label>
+                <label asp-for="sede_recibe" class="control-label">Sede donde se recibe la solicitud</label>
                 <input asp-for="sede_recibe" class="form-control" />
                 <span asp-validation-for="sede_recibe" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="nombre_persona_recibe" class="control-label"></label>
-                <input asp-for="nombre_persona_recibe" class="form-control" />
-                <span asp-validation-for="nombre_persona_recibe" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="metodo_envio" class="control-label"></label>
+                <label asp-for="metodo_envio" class="control-label">Método por el que se envía la solicitud</label>
                 <input asp-for="metodo_envio" class="form-control" />
                 <span asp-validation-for="metodo_envio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="apoyo_organizativo" class="control-label"></label>
+                <label asp-for="apoyo_organizativo" class="control-label">Apoyo organizativo</label>
                 <input asp-for="apoyo_organizativo" class="form-control" />
                 <span asp-validation-for="apoyo_organizativo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="producto_apoyo_organizativo" class="control-label"></label>
+                <label asp-for="producto_apoyo_organizativo" class="control-label">Producto de apoyo organizativo</label>
                 <input asp-for="producto_apoyo_organizativo" class="form-control" />
                 <span asp-validation-for="producto_apoyo_organizativo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="servicio_apoyo_empleados" class="control-label"></label>
+                <label asp-for="servicio_apoyo_empleados" class="control-label">Servicio de apoyo empleado</label>
                 <input asp-for="servicio_apoyo_empleados" class="form-control" />
                 <span asp-validation-for="servicio_apoyo_empleados" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="servicio_apoyo_recibe" class="control-label"></label>
+                <label asp-for="servicio_apoyo_recibe" class="control-label">Servicio de apoyo recibido</label>
                 <input asp-for="servicio_apoyo_recibe" class="form-control" />
                 <span asp-validation-for="servicio_apoyo_recibe" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="servicio_apoyo_recibe_region_educativa" class="control-label"></label>
+                <label asp-for="servicio_apoyo_recibe_region_educativa" class="control-label">Servicio de apoyo que recibe en la región educativa</label>
                 <input asp-for="servicio_apoyo_recibe_region_educativa" class="form-control" />
                 <span asp-validation-for="servicio_apoyo_recibe_region_educativa" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="apoyo_educativo_requerido" class="control-label"></label>
+                <label asp-for="apoyo_educativo_requerido" class="control-label">Apoyo educativo requerido</label>
                 <input asp-for="apoyo_educativo_requerido" class="form-control" />
                 <span asp-validation-for="apoyo_educativo_requerido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="descripcion_condicion" class="control-label"></label>
+                <label asp-for="descripcion_condicion" class="control-label">Descripción de la condición de discapacidad del estudiante</label>
                 <input asp-for="descripcion_condicion" class="form-control" />
                 <span asp-validation-for="descripcion_condicion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="id_centro_Educativo" class="control-label"></label>
-                <input asp-for="id_centro_Educativo" class="form-control" />
-                <span asp-validation-for="id_centro_Educativo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="id_historial" class="control-label"></label>
-                <input asp-for="id_historial" class="form-control" />
-                <span asp-validation-for="id_historial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Consultar">Volver</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

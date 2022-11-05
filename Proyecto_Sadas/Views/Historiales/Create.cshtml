@@ -1,0 +1,91 @@
+﻿@model Proyecto_Sadas.Models.Historial
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Historial</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="asesoria_previa" class="control-label">¿Tuvo asesoría del Cenarec anteriormente?</label>
+                <br />
+                Sí: <input asp-for="asesoria_previa" type="radio" value=1 class="form-check-input" checked="checked"/>
+                <br />
+                No: <input asp-for="asesoria_previa" type="radio" value=0 class="form-check-input" />
+                <span asp-validation-for="asesoria_previa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sede_asesoria_previa" class="control-label">Sede en donde recibió asesoría anteriormente</label>
+                <select asp-for="sede_asesoria_previa" class="form-select">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Limón</option>
+                    <option>San Carlos</option>
+                    <option>Coto</option>
+                    <option>Central-Cenarec</option>
+                    <option>Liberia</option>
+                </select>
+                <span asp-validation-for="sede_asesoria_previa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adjunta_certificacion_medica_CCSS" class="control-label">¿Adjunta certificación médica emitida por la Caja Costarricences del Seguro Social (CCSS)?</label>
+                <br />
+                Sí: <input asp-for="adjunta_certificacion_medica_CCSS" type="radio" value=1 class="form-check-input" checked="checked" />
+                <br />
+                No: <input asp-for="adjunta_certificacion_medica_CCSS" type="radio" value=0 class="form-check-input" />
+                <span asp-validation-for="asesoria_previa" class="text-danger"></span>
+                <span asp-validation-for="adjunta_certificacion_medica_CCSS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adjunta_certificacion_medica_CONAPDIS" class="control-label">¿Adjunta certificación de discapacidad emitida por el Consejo Nacional de Personas con Discapacidad (CONAPDIS)?</label>
+                <br />
+                Sí: <input asp-for="adjunta_certificacion_medica_CONAPDIS" type="radio" value=1 class="form-check-input" checked="checked" />
+                <br />
+                No: <input asp-for="adjunta_certificacion_medica_CONAPDIS" type="radio" value=0 class="form-check-input" />
+                <span asp-validation-for="adjunta_certificacion_medica_CONAPDIS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_gubernamental" class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?</label>
+                <br />
+                Sí: <input asp-for="producto_apoyo_gubernamental" type="radio" value=1 class="form-check-input" checked="checked" />
+                <br />
+                No: <input asp-for="producto_apoyo_gubernamental" type="radio" value=0 class="form-check-input" />
+                <span asp-validation-for="producto_apoyo_gubernamental" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_gubernamental_descripcion" class="control-label">Mencione el producto de apoyo solicitado</label>
+                <input asp-for="producto_apoyo_gubernamental_descripcion" class="form-control" />
+                <span asp-validation-for="producto_apoyo_gubernamental_descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_no_gubernamental" class="control-label">¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?</label>
+                <br />
+                Sí: <input asp-for="producto_apoyo_no_gubernamental" type="radio" value=1 class="form-check-input" checked="checked" />
+                <br />
+                No: <input asp-for="producto_apoyo_no_gubernamental" type="radio" value=0 class="form-check-input" />
+                <span asp-validation-for="producto_apoyo_no_gubernamental" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_apoyo_no_gubernamental_descripcion" class="control-label">Mencione el producto de apoyo solicitado</label>
+                <input asp-for="producto_apoyo_no_gubernamental_descripcion" class="form-control" />
+                <span asp-validation-for="producto_apoyo_no_gubernamental_descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Proyecto_Sadas.Models.Solicitud>
 
 @{
-    ViewData["Title"] = "Consultar";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Consultar</h1>
+<h1>Index</h1>
 
 <p>
-    <a asp-action="Registrar">Crear nuevo</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -20,9 +20,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.sede_recibe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nombre_persona_recibe)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.metodo_envio)
@@ -49,10 +46,10 @@
                 @Html.DisplayNameFor(model => model.descripcion_condicion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.id_centro_Educativo)
+                @Html.DisplayNameFor(model => model.centro_Educativo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.id_historial)
+                @Html.DisplayNameFor(model => model.historial)
             </th>
             <th></th>
         </tr>
@@ -68,9 +65,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.sede_recibe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombre_persona_recibe)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.metodo_envio)
@@ -97,14 +91,15 @@
                 @Html.DisplayFor(modelItem => item.descripcion_condicion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_centro_Educativo)
+                @Html.DisplayFor(modelItem => item.centro_Educativo.id_centro_educativo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_historial)
+                @Html.DisplayFor(modelItem => item.historial.id_historial)
             </td>
             <td>
-                <a asp-action="Modificar" asp-route-id="@item.id_solicitud">Modificar</a> |
-                <a asp-action="Detalle" asp-route-id="@item.id_solicitud">Detalle</a> |        
+                <a asp-action="Edit" asp-route-id="@item.id_solicitud">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_solicitud">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_solicitud">Delete</a>
             </td>
         </tr>
 }
